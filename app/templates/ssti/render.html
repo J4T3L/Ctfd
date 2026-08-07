@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Preview - CyberVault</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <div class="brand-icon">⚡</div>
+            <span class="brand-title">CyberVault</span>
+            <span class="brand-tag">v2.4 Pro</span>
+        </a>
+        <div class="nav-links">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>WAF Active</span>
+            </div>
+            <a href="/" class="nav-link">← Hub Portal</a>
+            <a href="/ssti/" class="nav-link">Home</a>
+            <a href="/ssti/generator" class="nav-link active">Report Generator</a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <h2 style="font-size: 2rem; font-weight: 800;">Generated Report Output</h2>
+                <p style="color: var(--text-secondary);">Real-time Jinja2 rendered security audit template.</p>
+            </div>
+            <a href="/ssti/generator" class="btn-secondary">← Back to Editor</a>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+            {{ rendered_output | safe }}
+        </div>
+
+        <div class="glass-card">
+            <h4 style="margin-bottom: 0.85rem; color: var(--text-secondary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Raw Template Input Source</h4>
+            <pre class="code-block"><code>{{ raw_template }}</code></pre>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberVault Security Systems. CTF Web Challenge Target.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

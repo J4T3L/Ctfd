@@ -5,7 +5,7 @@ description: |
   Portal Login Staff DevNotes digunakan oleh tim pengembang untuk mengakses catatan internal.
   Sebagai tantangan pemula (Easy), temukan cara melakukan bypass autentikasi SQL Injection pada form login untuk masuk sebagai pengguna `admin`!
 
-  **Target Link**: [https://sqli.paradick.my.id](https://sqli.paradick.my.id)
+  **Target Link**: [https://target.paradick.my.id/sqli/](https://target.paradick.my.id/sqli/)
 
 value: 100
 type: standard

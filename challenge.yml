@@ -7,7 +7,7 @@ description: |
   
   Apakah Anda dapat meloloskan diri dari pembatasan WAF dan membaca berkas rahasia di `/flag.txt`?
 
-  **Target**: `https://target.paradick.my.id/`
+  **Target Link**: [https://target.paradick.my.id/ssti/](https://target.paradick.my.id/ssti/)
 
 value: 500
 type: standard

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Web Exploitation Training Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <div class="brand-icon">🛡️</div>
+            <span class="brand-title">CTF Web Training Hub</span>
+            <span class="brand-tag">Modul Ajar</span>
+        </a>
+        <div class="nav-links">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Lab Online</span>
+            </div>
+            <a href="/" class="nav-link active">Portal Home</a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="hero-badge">🎓 Laboratorium Jaringan & Keamanan Siber</div>
+            <h1 class="hero-title">Web Exploitation <span>CTF Challenge Hub</span></h1>
+            <p class="hero-subtitle">Selamat datang di Portal Training CTF Web. Pilih modul laboratorium di bawah untuk mulai menyelesaikan tantangan eksploitasi web!</p>
+        </section>
+
+        <section class="grid-3">
+            <!-- Challenge 2: Easy SQLi -->
+            <div class="glass-card">
+                <div class="card-icon">🔑</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
+                <h3 class="card-title">DevNotes - Admin Portal</h3>
+                <p class="card-desc">Formulir login portal staff yang tidak tersanitasi. Pelajari konsep dasar <strong>SQL Injection Authentication Bypass</strong>.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/sqli/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/sqli) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 1: Medium SSTI -->
+            <div class="glass-card">
+                <div class="card-icon">⚡</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 500 PTS</div>
+                <h3 class="card-title">CyberVault - Report Generator</h3>
+                <p class="card-desc">Generator laporan audit berbasis Jinja2. Temukan cara meloloskan diri dari WAF untuk mengeksekusi <strong>Server-Side Template Injection (SSTI)</strong>.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/ssti/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/ssti) →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CTF Web Exploitation Training Portal. Powered by Flask & Cloudflare Tunnel.</p>
+    </footer>
+</body>
+</html>

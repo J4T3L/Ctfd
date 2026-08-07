@@ -1,7 +1,7 @@
 services:
-  cybervault:
+  ctf_web_portal:
     build: .
-    container_name: cybervault_web_challenge
+    container_name: ctf_web_portal_challenge
     ports:
       - "8001:8000"
     restart: always
