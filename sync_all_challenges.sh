@@ -1,6 +1,12 @@
 #!/bin/bash
 # Master script to install / sync all 15 CTF challenges into CTFd via ctfcli
 
+if [ ! -d ".ctf" ]; then
+    echo "[!] Error: Folder .ctf belum di-inisialisasi."
+    echo "[!] Silakan jalankan 'ctf init' terlebih dahulu di folder /opt/cybervault!"
+    exit 1
+fi
+
 echo "[*] Syncing all 15 CTF Web Challenges to CTFd..."
 
 CHALLENGE_DIRS=(
@@ -24,10 +30,11 @@ CHALLENGE_DIRS=(
 for dir in "${CHALLENGE_DIRS[@]}"; do
     if [ -d "$dir" ]; then
         echo "--------------------------------------------------------"
-        echo "[+] Installing/Syncing: $dir"
-        ctf challenge install "$dir" 2>/dev/null || ctf challenge sync "$dir" 2>/dev/null
+        echo "[+] Processing: $dir"
+        ctf challenge add "$dir"
+        ctf challenge install "$dir" || ctf challenge sync "$dir"
     fi
 done
 
 echo "--------------------------------------------------------"
-echo "[🎉] All 15 challenges synced successfully to CTFd!"
+echo "[🎉] Sync process finished!"
