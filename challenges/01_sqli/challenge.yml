@@ -18,3 +18,7 @@ tags:
   - web
   - sqli
   - easy
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `sqlmap` / `ffuf`. Gunakan Burp Suite Interceptor atau cobalah karakter khusus `'` pada kolom Username untuk merusak logika query SQL. Contoh payload: `admin' --` atau `' OR '1'='1`."
+    cost: 10

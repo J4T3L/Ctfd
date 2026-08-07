@@ -18,3 +18,7 @@ tags:
   - web
   - jwt
   - hard
+
+hints:
+  - content: "💡 Tool Recommended: `jwt_tool` / `jwt.io` / `hashcat`. Gunakan tool CLI `jwt_tool`: `python3 jwt_tool.py <TOKEN> -d rockyou.txt` untuk crack secret `secret123` atau jalankan `python3 jwt_tool.py <TOKEN> -X a` untuk exploit algoritma `none`."
+    cost: 40

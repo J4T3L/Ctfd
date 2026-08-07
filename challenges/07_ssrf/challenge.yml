@@ -18,3 +18,7 @@ tags:
   - web
   - ssrf
   - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `nuclei`. Gunakan Burp Suite Repeater untuk mengubah parameter `url` menjadi alamat loopback internal server: `http://127.0.0.1:8000/ssrf/internal/admin/secret`."
+    cost: 35

@@ -18,3 +18,7 @@ tags:
   - web
   - reconnaissance
   - easy
+
+hints:
+  - content: "💡 Tool Recommended: `curl` / `ffuf` / `nuclei`. Anda dapat menggunakan perintah `curl -s https://target.paradick.my.id/hidden_comment/` atau ffuf directory discovery untuk memindai komentar HTML tersembunyi."
+    cost: 5

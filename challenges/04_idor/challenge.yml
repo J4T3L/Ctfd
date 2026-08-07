@@ -18,3 +18,7 @@ tags:
   - web
   - idor
   - medium
+
+hints:
+  - content: "💡 Tool Recommended: `ffuf` / `Burp Suite Intruder`. Jalankan perintah fuzzing angka: `ffuf -u 'https://target.paradick.my.id/idor/?user_id=FUZZ' -w numbers.txt` (rentang ID 100-110) atau gunakan Burp Intruder Payload type Numbers."
+    cost: 15

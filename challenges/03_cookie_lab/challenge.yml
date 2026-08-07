@@ -18,3 +18,7 @@ tags:
   - web
   - cookie
   - easy
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `Developer Tools` / `base64`. Tangkap request dengan Burp Suite Repeater atau DevTools, dekode cookie `user_session` dengan `echo '<val>' | base64 -d`, lalu ubah menjadi Base64 dari `role=admin` (`cm9sZT1hZG1pbg==`)."
+    cost: 10

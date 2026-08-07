@@ -19,3 +19,7 @@ tags:
   - lfi
   - path-traversal
   - medium
+
+hints:
+  - content: "💡 Tool Recommended: `ffuf` / `nuclei`. Fuzzing parameter `?page=` menggunakan wordlist LFI: `ffuf -u 'https://target.paradick.my.id/lfi/?page=FUZZ' -w lfi_wordlist.txt` atau panggil template `nuclei -u https://target.paradick.my.id/lfi/ -t file/lfi/`."
+    cost: 25
