@@ -18,7 +18,7 @@
         <form action="/ssrf/" method="POST" style="margin-bottom: 1.5rem;">
             <div class="form-group">
                 <label class="form-label" for="url">Target URL to Fetch</label>
-                <input type="text" id="url" name="url" class="form-input" value="{{ target_url or 'http://httpbin.org/get' }}" placeholder="http://127.0.0.1:8000/ssrf/internal/admin/secret" required>
+                <input type="text" id="url" name="url" class="form-input" value="{{ target_url or 'http://httpbin.org/get' }}" placeholder="http://httpbin.org/get" required>
             </div>
             <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Fetch Remote URL 🌐</button>
         </form>
@@ -36,10 +36,6 @@
             <pre class="code-block" style="min-height: 140px;"><code>{{ fetched_content }}</code></pre>
         </div>
         {% endif %}
-
-        <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
-            Hint: Internal service available at <code>http://127.0.0.1:8000/ssrf/internal/admin/secret</code>
-        </div>
     </div>
 </body>
 </html>
