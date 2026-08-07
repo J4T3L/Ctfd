@@ -25,7 +25,7 @@ for dir in "${CHALLENGE_DIRS[@]}"; do
     if [ -d "$dir" ]; then
         echo "--------------------------------------------------------"
         echo "[+] Installing/Syncing: $dir"
-        (cd "$dir" && ctf challenge add . 2>/dev/null; ctf challenge install . 2>/dev/null || ctf challenge sync .)
+        ctf challenge install "$dir" 2>/dev/null || ctf challenge sync "$dir" 2>/dev/null
     fi
 done
 
