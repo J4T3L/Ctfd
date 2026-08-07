@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  cybervault:
+    build: .
+    container_name: cybervault_web_challenge
+    ports:
+      - "8000:8000"
+    restart: always
+    read_only: false
+    security_opt:
+      - no-new-privileges:true

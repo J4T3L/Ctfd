@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberVault - Enterprise Audit & Report Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="brand">
+            <div class="brand-icon">⚡</div>
+            <span class="brand-title">CyberVault</span>
+            <span class="brand-tag">v2.4 Pro</span>
+        </a>
+        <div class="nav-links">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>WAF Active</span>
+            </div>
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/generator" class="nav-link">Report Generator</a>
+            <a href="/generator" class="btn-primary">Create Report →</a>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="hero-badge">🛡️ Cyber Security Compliance Suite</div>
+            <h1 class="hero-title">Automated Security Audits <span>Powered by Dynamic Templates</span></h1>
+            <p class="hero-subtitle">CyberVault provides real-time security report rendering using flexible Jinja2 templating architecture. Design, customize, and audit your assets seamlessly with active WAF protection.</p>
+            <div class="hero-actions">
+                <a href="/generator" class="btn-primary">Launch Generator 🚀</a>
+                <a href="#features" class="btn-secondary">Learn Architecture</a>
+            </div>
+        </section>
+
+        <section id="features" class="grid-3">
+            <div class="glass-card">
+                <div class="card-icon">⚙️</div>
+                <h3 class="card-title">Dynamic Templating</h3>
+                <p class="card-desc">Fully customizable report structures rendered on-the-fly for real-time security previews.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🔒</div>
+                <h3 class="card-title">WAF Filter Enabled</h3>
+                <p class="card-desc">Equipped with CyberVault Keyword Filter v1.0 to prevent unauthorized template directives.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">High Speed Engine</h3>
+                <p class="card-desc">Instant rendering engine designed for high-throughput security compliance auditing.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CyberVault Security Systems. CTF Web Challenge Target.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
