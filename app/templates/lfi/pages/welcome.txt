@@ -1,0 +1,3 @@
+Welcome to File Viewer Pro!
+This utility loads text documents dynamically using URL parameters.
+Try exploring path traversal techniques to inspect sensitive files like flag.txt or /etc/passwd!

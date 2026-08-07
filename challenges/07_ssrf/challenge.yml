@@ -1,0 +1,20 @@
+name: "URL Content Fetcher"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Aplikasi ini dapat mengambil isi halaman web dari URL eksternal atas nama server.
+  Eksploitasi celah **Server-Side Request Forgery (SSRF)** untuk mengakses layanan admin internal di `http://127.0.0.1:8000/ssrf/internal/admin/secret`!
+
+  **Target Link**: [https://target.paradick.my.id/ssrf/](https://target.paradick.my.id/ssrf/)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{ssrf_1n73rn4l_n37w0rk_4cc3ss_2026}"
+
+tags:
+  - web
+  - ssrf
+  - hard

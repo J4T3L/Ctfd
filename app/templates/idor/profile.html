@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserProfile Portal - IDOR Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 600px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">EASY/MEDIUM • 150 PTS</span>
+            <h2>UserProfile Inspector</h2>
+            <p>Viewing profile for ID: <code>user_id={{ user_id }}</code></p>
+        </div>
+
+        <div style="background: #040711; border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+            <div style="display: grid; grid-template-columns: 100px 1fr; gap: 0.8rem; font-size: 0.95rem;">
+                <div style="color: var(--text-secondary);">Full Name:</div>
+                <div style="font-weight: 700; color: #fff;">{{ user['name'] }}</div>
+
+                <div style="color: var(--text-secondary);">Email:</div>
+                <div style="color: var(--accent-cyan);">{{ user['email'] }}</div>
+
+                <div style="color: var(--text-secondary);">Role Level:</div>
+                <div><span class="status-badge status-passed">{{ user['role'] }}</span></div>
+
+                <div style="color: var(--text-secondary);">Profile Note:</div>
+                <div style="color: var(--text-muted); font-size: 0.9rem;">{{ user['note'] }}</div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; justify-content: center; font-size: 0.85rem;">
+            <a href="/idor/?user_id=101" class="btn-secondary">User #101</a>
+            <a href="/idor/?user_id=102" class="btn-secondary">User #102 (You)</a>
+            <a href="/idor/?user_id=100" class="btn-primary">Try User #100 →</a>
+        </div>
+    </div>
+</body>
+</html>

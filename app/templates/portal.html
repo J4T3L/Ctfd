@@ -10,8 +10,8 @@
     <nav class="navbar">
         <a href="/" class="brand">
             <div class="brand-icon">🛡️</div>
-            <span class="brand-title">CTF Web Training Hub</span>
-            <span class="brand-tag">Modul Ajar</span>
+            <span class="brand-title">CTF Web Training Suite</span>
+            <span class="brand-tag">10 Challenges</span>
         </a>
         <div class="nav-links">
             <div class="status-indicator">
@@ -23,39 +23,137 @@
     </nav>
 
     <main class="main-container">
-        <section class="hero">
+        <section class="hero" style="padding: 3rem 1rem 2rem 1rem;">
             <div class="hero-badge">🎓 Laboratorium Jaringan & Keamanan Siber</div>
-            <h1 class="hero-title">Web Exploitation <span>CTF Challenge Hub</span></h1>
-            <p class="hero-subtitle">Selamat datang di Portal Training CTF Web. Pilih modul laboratorium di bawah untuk mulai menyelesaikan tantangan eksploitasi web!</p>
+            <h1 class="hero-title">Web Exploitation <span>CTF Training Suite</span></h1>
+            <p class="hero-subtitle">Portal latihan praktikum keamanan web lengkap untuk Modul Ajar Jarkom & Cyber Security (10 Tantangan dari Easy hingga Hard).</p>
         </section>
 
-        <section class="grid-3">
-            <!-- Challenge 2: Easy SQLi -->
+        <!-- EASY SECTION -->
+        <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--accent-green);">🟢 Easy Level (Tingkat Dasar)</h3>
+        <section class="grid-3" style="margin-top: 0;">
+            <!-- Challenge 1: HTML Comment Leak -->
+            <div class="glass-card">
+                <div class="card-icon">🔍</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 50 PTS</div>
+                <h3 class="card-title">Hidden Comments</h3>
+                <p class="card-desc">Inspeksi kode sumber HTML untuk menemukan informasi sensitif & endpoint tersembunyi.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/hidden_comment/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/hidden_comment) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 2: SQLi -->
             <div class="glass-card">
                 <div class="card-icon">🔑</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
-                <h3 class="card-title">DevNotes - Admin Portal</h3>
-                <p class="card-desc">Formulir login portal staff yang tidak tersanitasi. Pelajari konsep dasar <strong>SQL Injection Authentication Bypass</strong>.</p>
+                <h3 class="card-title">DevNotes Login</h3>
+                <p class="card-desc">Bypass formulir autentikasi login menggunakan manipulasi sintaks <strong>SQL Injection</strong> (`admin' --`).</p>
                 <div style="margin-top: 1.5rem;">
                     <a href="/sqli/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/sqli) →</a>
                 </div>
             </div>
 
-            <!-- Challenge 1: Medium SSTI -->
+            <!-- Challenge 3: Cookie Lab -->
+            <div class="glass-card">
+                <div class="card-icon">🍪</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
+                <h3 class="card-title">Cookie Manager</h3>
+                <p class="card-desc">Manipulasi cookie HTTP `user_session` (Base64) untuk eskalasi hak akses menjadi administrator.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/cookie_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/cookie_lab) →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEDIUM SECTION -->
+        <h3 style="font-size: 1.5rem; margin: 3rem 0 1rem 0; color: var(--accent-cyan);">🟡 Medium Level (Tingkat Menengah)</h3>
+        <section class="grid-3" style="margin-top: 0;">
+            <!-- Challenge 4: IDOR -->
+            <div class="glass-card">
+                <div class="card-icon">👤</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 150 PTS</div>
+                <h3 class="card-title">UserProfile Portal</h3>
+                <p class="card-desc">Pelajari celah <strong>IDOR</strong> dengan mengganti parameter `user_id` untuk mengintip profil admin.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/idor/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/idor) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 5: LFI -->
+            <div class="glass-card">
+                <div class="card-icon">📁</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 250 PTS</div>
+                <h3 class="card-title">File Viewer Pro</h3>
+                <p class="card-desc">Eksploitasi <strong>Path Traversal / Local File Inclusion (LFI)</strong> untuk membaca berkas rahasia sistem.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/lfi/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/lfi) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 6: RCE Ping -->
+            <div class="glass-card">
+                <div class="card-icon">💻</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 300 PTS</div>
+                <h3 class="card-title">Ping Diagnostic</h3>
+                <p class="card-desc">Suntikkan perintah shell (<strong>Command Injection</strong>) pada alat utilitas diagnostik jaringan.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/rce_ping/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/rce_ping) →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HARD SECTION -->
+        <h3 style="font-size: 1.5rem; margin: 3rem 0 1rem 0; color: var(--accent-purple);">🔴 Hard Level (Tingkat Lanjut)</h3>
+        <section class="grid-3" style="margin-top: 0;">
+            <!-- Challenge 7: SSRF -->
+            <div class="glass-card">
+                <div class="card-icon">🌐</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 350 PTS</div>
+                <h3 class="card-title">URL Content Fetcher</h3>
+                <p class="card-desc">Manfaatkan <strong>Server-Side Request Forgery (SSRF)</strong> untuk menjangkau layanan admin internal.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/ssrf/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/ssrf) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 8: JWT -->
+            <div class="glass-card">
+                <div class="card-icon">🎟️</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 400 PTS</div>
+                <h3 class="card-title">JWT Inspector</h3>
+                <p class="card-desc">Eksploitasi token autentikasi <strong>JWT Weak Secret</strong> atau manipulasi algoritma `none`.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/jwt_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/jwt_lab) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 9: SSTI -->
             <div class="glass-card">
                 <div class="card-icon">⚡</div>
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 500 PTS</div>
-                <h3 class="card-title">CyberVault - Report Generator</h3>
-                <p class="card-desc">Generator laporan audit berbasis Jinja2. Temukan cara meloloskan diri dari WAF untuk mengeksekusi <strong>Server-Side Template Injection (SSTI)</strong>.</p>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 500 PTS</div>
+                <h3 class="card-title">CyberVault Generator</h3>
+                <p class="card-desc">Bypass WAF kata kunci Jinja2 untuk mengeksekusi <strong>Server-Side Template Injection (SSTI)</strong>.</p>
                 <div style="margin-top: 1.5rem;">
                     <a href="/ssti/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/ssti) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 10: Pickle RCE -->
+            <div class="glass-card">
+                <div class="card-icon">🐍</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 500 PTS</div>
+                <h3 class="card-title">Pickle Vault</h3>
+                <p class="card-desc">Konstruksi objek Python `__reduce__` untuk mengeksploitasi <strong>Insecure Deserialization RCE</strong>.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/pickle_rce/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/pickle_rce) →</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 CTF Web Exploitation Training Portal. Powered by Flask & Cloudflare Tunnel.</p>
+        <p>&copy; 2026 CTF Web Exploitation Training Portal Suite. Powered by Flask & Cloudflare Tunnel.</p>
     </footer>
 </body>
 </html>

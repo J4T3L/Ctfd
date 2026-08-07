@@ -1,0 +1,20 @@
+name: "DevCompany - Hidden Comments"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Portal publik DevCompany menyimpan catatan pengembang pada komentar kode sumber HTML.
+  Inspeksi kode sumber halaman untuk menemukan rute rahasia administrasi!
+
+  **Target Link**: [https://target.paradick.my.id/hidden_comment/](https://target.paradick.my.id/hidden_comment/)
+
+value: 50
+type: standard
+state: visible
+
+flags:
+  - "CTF{h7ml_c0mm3n7_l34k_d1sc0v3r3d_2026}"
+
+tags:
+  - web
+  - reconnaissance
+  - easy

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Session Manager - CTF Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 600px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">EASY • 100 PTS</span>
+            <h2>Cookie Session Inspector</h2>
+            <p>Your session role is determined by the HTTP Cookie: <code>user_session</code>.</p>
+        </div>
+
+        <div style="background: #040711; border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: var(--font-code); font-size: 0.9rem;">
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">RAW COOKIE VALUE (Base64):</div>
+            <div style="color: var(--accent-cyan); word-break: break-all; margin-bottom: 10px;">{{ request.cookies.get('user_session') }}</div>
+            
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">DECODED COOKIE CONTENT:</div>
+            <div style="color: var(--accent-green); font-weight: 700;">{{ decoded }}</div>
+        </div>
+
+        {% if is_admin %}
+        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 1.5rem; border-radius: 10px; text-align: center;">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">🎉 ADMIN ACCESS GRANTED! FLAG:</h4>
+            <div style="font-family: var(--font-code); font-size: 1.1rem; color: #fff; background: #040711; padding: 0.8rem; border-radius: 6px;">
+                {{ flag }}
+            </div>
+        </div>
+        {% else %}
+        <div class="alert-error">
+            <span>⚠️</span>
+            <div>Current Role: <strong>guest</strong>. Access denied to Administrator secret notes! Edit your cookie to <code>role=admin</code> (encoded in Base64) to elevate privileges.</div>
+        </div>
+        {% endif %}
+
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <a href="/cookie_lab/reset" class="btn-secondary" style="width: 100%; justify-content: center;">Reset Cookie to Guest</a>
+        </div>
+    </div>
+</body>
+</html>

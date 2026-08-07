@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Token Inspector - CTF Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 650px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">MEDIUM/HARD • 400 PTS</span>
+            <h2>JWT Token Inspector</h2>
+            <p>Authentication token cookie: <code>jwt_auth</code>.</p>
+        </div>
+
+        <div style="background: #040711; border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: var(--font-code); font-size: 0.85rem;">
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">RAW JWT TOKEN:</div>
+            <div style="color: var(--accent-cyan); word-break: break-all; margin-bottom: 10px;">{{ token }}</div>
+
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">DECODED PAYLOAD JSON:</div>
+            <pre style="color: var(--accent-green);"><code>{{ payload }}</code></pre>
+        </div>
+
+        {% if is_admin %}
+        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 1.5rem; border-radius: 10px; text-align: center;">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">🎉 JWT ELEVATED TO ADMIN! FLAG:</h4>
+            <div style="font-family: var(--font-code); font-size: 1.1rem; color: #fff; background: #040711; padding: 0.8rem; border-radius: 6px;">
+                {{ flag }}
+            </div>
+        </div>
+        {% else %}
+        <div class="alert-error">
+            <span>⚠️</span>
+            <div>Current Role: <strong>{{ payload.get('role', 'guest') if payload else 'invalid' }}</strong>. Crack the weak secret (key: <code>secret123</code>) or use <code>"alg": "none"</code> to elevate your role to <code>"role": "admin"</code>.</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

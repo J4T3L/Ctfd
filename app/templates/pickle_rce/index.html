@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickle Deserialization Vault - RCE Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 650px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">HARD • 500 PTS</span>
+            <h2>Python Pickle Object Deserialization</h2>
+            <p>Session cookie: <code>pickle_session</code>.</p>
+        </div>
+
+        {% if error %}
+        <div class="alert-error">
+            <span>⚠️</span>
+            <div>{{ error }}</div>
+        </div>
+        {% endif %}
+
+        <div style="background: #040711; border: 1px solid var(--border-color); padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; font-family: var(--font-code); font-size: 0.85rem;">
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">RAW SESSION COOKIE (Base64 Pickle):</div>
+            <div style="color: var(--accent-cyan); word-break: break-all; margin-bottom: 10px;">{{ session_cookie }}</div>
+
+            <div style="color: var(--text-secondary); margin-bottom: 4px;">DESERIALIZED OBJECT REPR:</div>
+            <div style="color: var(--accent-green);">{{ user_obj.__dict__ if user_obj else 'None' }}</div>
+        </div>
+
+        <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Craft a custom Python <code>__reduce__</code> pickle object payload to execute shell commands or read <code>/flag.txt</code>!
+        </div>
+    </div>
+</body>
+</html>

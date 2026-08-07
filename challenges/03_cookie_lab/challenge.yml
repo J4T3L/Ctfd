@@ -1,0 +1,20 @@
+name: "Cookie Session Manager"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Aplikasi ini mempercayai status peran pengguna yang disimpan di dalam cookie `user_session` berformat Base64.
+  Dekode dan manipulasi nilai cookie tersebut untuk menaikkan akses menjadi `role=admin`!
+
+  **Target Link**: [https://target.paradick.my.id/cookie_lab/](https://target.paradick.my.id/cookie_lab/)
+
+value: 100
+type: standard
+state: visible
+
+flags:
+  - "CTF{c00k13_m4n1pul4710n_m4s73r_2026}"
+
+tags:
+  - web
+  - cookie
+  - easy

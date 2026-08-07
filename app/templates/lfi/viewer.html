@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Viewer Pro - LFI Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 650px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">MEDIUM • 250 PTS</span>
+            <h2>File Viewer Utility</h2>
+            <p>Parameter: <code>?page={{ filename }}</code></p>
+        </div>
+
+        {% if error %}
+        <div class="alert-error">
+            <span>⚠️</span>
+            <div>{{ error }}</div>
+        </div>
+        {% endif %}
+
+        <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+            <h4 style="color: var(--text-secondary); margin-bottom: 0.8rem; font-size: 0.85rem; text-transform: uppercase;">File Contents Output</h4>
+            <pre class="code-block" style="min-height: 120px;"><code>{{ content }}</code></pre>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; justify-content: center; font-size: 0.85rem;">
+            <a href="/lfi/?page=welcome.txt" class="btn-secondary">View welcome.txt</a>
+            <a href="/lfi/?page=flag.txt" class="btn-secondary">Try flag.txt</a>
+            <a href="/lfi/?page=../../../../flag.txt" class="btn-primary">Try Traversal →</a>
+        </div>
+    </div>
+</body>
+</html>

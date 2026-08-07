@@ -1,0 +1,20 @@
+name: "UserProfile Portal"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Portal profil pengguna menampilkan informasi berdasarkan parameter URL `user_id`.
+  Temukan ID akun administrator yang tersembunyi (IDOR) untuk melihat flag rahasia!
+
+  **Target Link**: [https://target.paradick.my.id/idor/](https://target.paradick.my.id/idor/)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{1d0r_pr1v1l3g3_3sc4l4710n_2026}"
+
+tags:
+  - web
+  - idor
+  - medium

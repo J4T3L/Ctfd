@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevCompany Corporate Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 600px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">EASY • 50 PTS</span>
+            <h2>DevCompany Internal Portal</h2>
+            <p>Welcome to our internal employee portal. Check out our public updates below.</p>
+        </div>
+
+        <!-- 
+            TODO FOR DEVELOPER TEAM:
+            Uncomment hidden administrative endpoint after security audit completes:
+            Secret Admin Endpoint: /hidden_comment/secret_admin_dashboard_99
+        -->
+
+        <div style="padding: 1.5rem; background: #040711; border-radius: 8px; margin-bottom: 1rem;">
+            <h3>Latest Announcements</h3>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.95rem;">All systems are operating normally. Remember to check HTML comments when reviewing page source!</p>
+        </div>
+    </div>
+</body>
+</html>
