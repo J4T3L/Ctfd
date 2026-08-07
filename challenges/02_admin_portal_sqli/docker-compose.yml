@@ -1,0 +1,9 @@
+services:
+  devnotes_sqli:
+    build: .
+    container_name: devnotes_sqli_challenge
+    ports:
+      - "8002:8000"
+    restart: always
+    security_opt:
+      - no-new-privileges:true

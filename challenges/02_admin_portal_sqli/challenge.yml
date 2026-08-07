@@ -1,0 +1,29 @@
+name: "DevNotes - Admin Portal"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Portal Login Staff DevNotes digunakan oleh tim pengembang untuk mengakses catatan internal.
+  Sebagai tantangan pemula (Easy), temukan cara melakukan bypass autentikasi SQL Injection pada form login untuk masuk sebagai pengguna `admin`!
+
+  **Target Link**: [https://sqli.paradick.my.id](https://sqli.paradick.my.id)
+
+value: 100
+type: standard
+
+state: visible
+
+flags:
+  - "CTF{34sy_sql_1nj3ct10n_byp4ss_2026}"
+
+tags:
+  - web
+  - sqli
+  - easy
+  - beginner
+
+files:
+  - admin_portal_sqli_handout.zip
+
+hints:
+  - content: "Cobalah karakter khusus petik tunggal `'` pada kolom Username untuk memanipulasi logika query SQL. Contoh payload: `admin' --` atau `' OR '1'='1`."
+    cost: 10
