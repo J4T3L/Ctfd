@@ -107,7 +107,7 @@ credentials-file: /root/.cloudflared/<TUNNEL_ID>.json
 
 ingress:
   - hostname: cybervault.ctfku.com
-    service: http://127.0.0.1:8000
+    service: http://127.0.0.1:8001
   - service: http_status:404
 EOF
 
@@ -145,4 +145,5 @@ Uji eksploitasi otomatis terhadap URL Tunnel dari luar LXC:
 ```bash
 python3 solution/solve.py https://cybervault.ctfku.com
 ```
+
 
