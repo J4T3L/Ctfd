@@ -11,11 +11,16 @@ from routes.rce_ping import rce_bp
 from routes.ssrf import ssrf_bp
 from routes.jwt_lab import jwt_bp
 from routes.pickle_rce import pickle_bp
+from routes.xss_reflected import xss_bp
+from routes.robots_secret import robots_bp
+from routes.weak_hash import hash_bp
+from routes.xxe_lab import xxe_bp
+from routes.logic_shop import logic_bp
 
 app = Flask(__name__)
-app.secret_key = "ctf_web_10_challenge_master_key_2026"
+app.secret_key = "ctf_web_15_challenge_master_key_2026"
 
-# Register all 10 CTF Blueprints
+# Register all 15 CTF Blueprints
 app.register_blueprint(sqli_bp)
 app.register_blueprint(comment_bp)
 app.register_blueprint(cookie_bp)
@@ -26,6 +31,11 @@ app.register_blueprint(ssrf_bp)
 app.register_blueprint(jwt_bp)
 app.register_blueprint(ssti_bp)
 app.register_blueprint(pickle_bp)
+app.register_blueprint(xss_bp)
+app.register_blueprint(robots_bp)
+app.register_blueprint(hash_bp)
+app.register_blueprint(xxe_bp)
+app.register_blueprint(logic_bp)
 
 @app.route('/')
 def portal():

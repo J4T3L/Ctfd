@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Parser Engine - XXE Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 650px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">MEDIUM/HARD • 450 PTS</span>
+            <h2>XML External Entity (XXE) Parser</h2>
+            <p>Submit raw XML payloads for server-side entity resolution.</p>
+        </div>
+
+        <form action="/xxe_lab/" method="POST" style="margin-bottom: 1.5rem;">
+            <div class="form-group">
+                <label class="form-label" for="xml_data">Raw XML Payload Input</label>
+                <textarea id="xml_data" name="xml_data" class="form-textarea" placeholder='<?xml version="1.0"?>&#10;<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///flag.txt"> ]>&#10;<data>&xxe;</data>' required>{{ xml_data or '<?xml version="1.0"?><note><to>Admin</to></note>' }}</textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Parse XML Payload 📄</button>
+        </form>
+
+        {% if error %}
+        <div class="alert-error">
+            <span>⚠️</span>
+            <div>{{ error }}</div>
+        </div>
+        {% endif %}
+
+        {% if parsed_output %}
+        <div class="glass-card" style="padding: 1.5rem;">
+            <h4 style="color: var(--text-secondary); margin-bottom: 0.8rem; font-size: 0.85rem; text-transform: uppercase;">Parsed Output Result</h4>
+            <pre class="code-block" style="min-height: 120px;"><code>{{ parsed_output }}</code></pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

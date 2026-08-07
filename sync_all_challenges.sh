@@ -1,7 +1,7 @@
 #!/bin/bash
-# Master script to install / sync all 10 CTF challenges into CTFd via ctfcli
+# Master script to install / sync all 15 CTF challenges into CTFd via ctfcli
 
-echo "[*] Syncing all 10 CTF Web Challenges to CTFd..."
+echo "[*] Syncing all 15 CTF Web Challenges to CTFd..."
 
 CHALLENGE_DIRS=(
     "challenges/01_sqli"
@@ -14,6 +14,11 @@ CHALLENGE_DIRS=(
     "challenges/08_jwt_lab"
     "challenges/09_ssti"
     "challenges/10_pickle_rce"
+    "challenges/11_xss_reflected"
+    "challenges/12_robots_secret"
+    "challenges/13_weak_hash"
+    "challenges/14_xxe_lab"
+    "challenges/15_logic_shop"
 )
 
 for dir in "${CHALLENGE_DIRS[@]}"; do
@@ -25,4 +30,4 @@ for dir in "${CHALLENGE_DIRS[@]}"; do
 done
 
 echo "--------------------------------------------------------"
-echo "[🎉] All 10 challenges synced successfully to CTFd!"
+echo "[🎉] All 15 challenges synced successfully to CTFd!"

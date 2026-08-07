@@ -1,0 +1,25 @@
+name: "XXE XML Parser"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Mesin pengolah XML ini memproses entitas luar secara langsung.
+  Suntikkan entitas eksternal XML (**XML External Entity - XXE**) untuk membaca berkas rahasia `flag.txt`!
+
+  **Target Link**: [https://target.paradick.my.id/xxe_lab/](https://target.paradick.my.id/xxe_lab/)
+
+value: 450
+type: standard
+state: visible
+
+flags:
+  - "CTF{34sy_sql_1nj3ct10n_byp4ss_2026}"
+
+tags:
+  - web
+  - xxe
+  - xml
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `nuclei`. Gunakan payload DOCTYPE ENTITY: `<!DOCTYPE test [ <!ENTITY xxe SYSTEM \"file:///flag.txt\"> ]><data>&xxe;</data>`."
+    cost: 45

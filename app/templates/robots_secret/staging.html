@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staging Environment - Secret Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 600px;">
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">🎉 ROBOTS.TXT DISCOVERY SUCCESS</span>
+            <h2>Hidden Staging Environment</h2>
+            <p>You successfully identified the disallowed crawler directory!</p>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 1.5rem; border-radius: 10px; text-align: center;">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">🔑 CHALLENGE FLAG:</h4>
+            <div style="font-family: var(--font-code); font-size: 1.1rem; color: #fff; background: #040711; padding: 0.8rem; border-radius: 6px;">
+                {{ flag }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corp Systems - Robots.txt Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 600px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">EASY • 50 PTS</span>
+            <h2>Corporate Web Services</h2>
+            <p>Welcome to our main portal. Search engine crawlers follow standard robots rules.</p>
+        </div>
+
+        <div style="padding: 1.5rem; background: #040711; border-radius: 8px; margin-bottom: 1rem;">
+            <h3>Crawler Notice</h3>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.95rem;">Check out <code>/robots_secret/robots.txt</code> to inspect web crawler directives!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weak Hash Login - CTF Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 500px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">MEDIUM • 200 PTS</span>
+            <h2>MD5 Password Cracking</h2>
+            <p>Admin password is hashed using legacy MD5 algorithm.</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert-error">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="/weak_hash/login" method="POST">
+            <div class="form-group">
+                <label class="form-label" for="password">Admin Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="e.g. password123" required autofocus>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit & Check Hash 🔑</button>
+        </form>
+    </div>
+</body>
+</html>

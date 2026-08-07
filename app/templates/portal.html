@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Web Exploitation Training Portal</title>
+    <title>CTF Web Exploitation Training Suite (15 Challenges)</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <a href="/" class="brand">
             <div class="brand-icon">🛡️</div>
             <span class="brand-title">CTF Web Training Suite</span>
-            <span class="brand-tag">10 Challenges</span>
+            <span class="brand-tag">15 Challenges</span>
         </a>
         <div class="nav-links">
             <div class="status-indicator">
@@ -25,8 +25,8 @@
     <main class="main-container">
         <section class="hero" style="padding: 3rem 1rem 2rem 1rem;">
             <div class="hero-badge">🎓 Laboratorium Jaringan & Keamanan Siber</div>
-            <h1 class="hero-title">Web Exploitation <span>CTF Training Suite</span></h1>
-            <p class="hero-subtitle">Portal latihan praktikum keamanan web lengkap untuk Modul Ajar Jarkom & Cyber Security (10 Tantangan dari Easy hingga Hard).</p>
+            <h1 class="hero-title">Web Exploitation <span>CTF Master Suite</span></h1>
+            <p class="hero-subtitle">Portal latihan praktikum keamanan web lengkap untuk Modul Ajar Jarkom & Cyber Security (15 Tantangan dari Easy hingga Hard).</p>
         </section>
 
         <!-- EASY SECTION -->
@@ -43,7 +43,29 @@
                 </div>
             </div>
 
-            <!-- Challenge 2: SQLi -->
+            <!-- Challenge 2: Robots.txt -->
+            <div class="glass-card">
+                <div class="card-icon">🤖</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 50 PTS</div>
+                <h3 class="card-title">Robots.txt Recon</h3>
+                <p class="card-desc">Periksa aturan robot pemindai crawler pada `/robots.txt` untuk menemukan direktori terlarang.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/robots_secret/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/robots_secret) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 3: Reflected XSS -->
+            <div class="glass-card">
+                <div class="card-icon">💉</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
+                <h3 class="card-title">Reflected XSS</h3>
+                <p class="card-desc">Suntikkan skrip JavaScript pada parameter pencarian untuk mengeksekusi Reflected XSS.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/xss_reflected/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/xss_reflected) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 4: SQLi -->
             <div class="glass-card">
                 <div class="card-icon">🔑</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
@@ -54,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- Challenge 3: Cookie Lab -->
+            <!-- Challenge 5: Cookie Lab -->
             <div class="glass-card">
                 <div class="card-icon">🍪</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; margin-bottom: 0.5rem;">EASY • 100 PTS</div>
@@ -69,7 +91,7 @@
         <!-- MEDIUM SECTION -->
         <h3 style="font-size: 1.5rem; margin: 3rem 0 1rem 0; color: var(--accent-cyan);">🟡 Medium Level (Tingkat Menengah)</h3>
         <section class="grid-3" style="margin-top: 0;">
-            <!-- Challenge 4: IDOR -->
+            <!-- Challenge 6: IDOR -->
             <div class="glass-card">
                 <div class="card-icon">👤</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 150 PTS</div>
@@ -80,7 +102,18 @@
                 </div>
             </div>
 
-            <!-- Challenge 5: LFI -->
+            <!-- Challenge 7: MD5 Weak Hash -->
+            <div class="glass-card">
+                <div class="card-icon">🔓</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 200 PTS</div>
+                <h3 class="card-title">MD5 Hash Cracking</h3>
+                <p class="card-desc">Pecahkan hash MD5 kata sandi admin yang lemah menggunakan wordlist atau rainbow table.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/weak_hash/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/weak_hash) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 8: LFI -->
             <div class="glass-card">
                 <div class="card-icon">📁</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 250 PTS</div>
@@ -91,7 +124,7 @@
                 </div>
             </div>
 
-            <!-- Challenge 6: RCE Ping -->
+            <!-- Challenge 9: RCE Ping -->
             <div class="glass-card">
                 <div class="card-icon">💻</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 300 PTS</div>
@@ -101,12 +134,23 @@
                     <a href="/rce_ping/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/rce_ping) →</a>
                 </div>
             </div>
+
+            <!-- Challenge 10: Logic Shop -->
+            <div class="glass-card">
+                <div class="card-icon">🛍️</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">MEDIUM • 350 PTS</div>
+                <h3 class="card-title">Business Logic Shop</h3>
+                <p class="card-desc">Manfaatkan celah logika bisnis pemesanan dengan memanipulasi jumlah kuantitas produk.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/logic_shop/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/logic_shop) →</a>
+                </div>
+            </div>
         </section>
 
         <!-- HARD SECTION -->
         <h3 style="font-size: 1.5rem; margin: 3rem 0 1rem 0; color: var(--accent-purple);">🔴 Hard Level (Tingkat Lanjut)</h3>
         <section class="grid-3" style="margin-top: 0;">
-            <!-- Challenge 7: SSRF -->
+            <!-- Challenge 11: SSRF -->
             <div class="glass-card">
                 <div class="card-icon">🌐</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 350 PTS</div>
@@ -117,7 +161,7 @@
                 </div>
             </div>
 
-            <!-- Challenge 8: JWT -->
+            <!-- Challenge 12: JWT -->
             <div class="glass-card">
                 <div class="card-icon">🎟️</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 400 PTS</div>
@@ -128,7 +172,18 @@
                 </div>
             </div>
 
-            <!-- Challenge 9: SSTI -->
+            <!-- Challenge 13: XXE -->
+            <div class="glass-card">
+                <div class="card-icon">📄</div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 450 PTS</div>
+                <h3 class="card-title">XXE XML Parser</h3>
+                <p class="card-desc">Suntikkan entitas eksternal XML (<strong>XXE Injection</strong>) untuk mengekstrak berkas rahasia sistem.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="/xxe_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge (/xxe_lab) →</a>
+                </div>
+            </div>
+
+            <!-- Challenge 14: SSTI -->
             <div class="glass-card">
                 <div class="card-icon">⚡</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 500 PTS</div>
@@ -139,7 +194,7 @@
                 </div>
             </div>
 
-            <!-- Challenge 10: Pickle RCE -->
+            <!-- Challenge 15: Pickle RCE -->
             <div class="glass-card">
                 <div class="card-icon">🐍</div>
                 <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">HARD • 500 PTS</div>
@@ -153,7 +208,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 CTF Web Exploitation Training Portal Suite. Powered by Flask & Cloudflare Tunnel.</p>
+        <p>&copy; 2026 CTF Web Exploitation Master Suite (15 Challenges). Powered by Flask & Cloudflare Tunnel.</p>
     </footer>
 </body>
 </html>

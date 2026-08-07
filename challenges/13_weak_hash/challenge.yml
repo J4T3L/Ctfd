@@ -1,0 +1,25 @@
+name: "MD5 Password Cracking"
+author: "Modul Ajar Jarkom"
+category: "Web Exploitation"
+description: |
+  Portal login ini memverifikasi kata sandi admin menggunakan hash MD5 legasi.
+  Pecahkan hash MD5 tersebut menggunakan wordlist populer (seperti `rockyou.txt`) untuk masuk sebagai admin!
+
+  **Target Link**: [https://target.paradick.my.id/weak_hash/](https://target.paradick.my.id/weak_hash/)
+
+value: 200
+type: standard
+state: visible
+
+flags:
+  - "CTF{md5_w34k_h4sh_cr4ck3d_2026}"
+
+tags:
+  - web
+  - crypto
+  - hash-cracking
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `hashcat` / `john` / `crackstation`. Pecahkan hash MD5 `e10adc3949ba59abbe56e057f20f883e` (kata sandi umum) menggunakan hashcat: `hashcat -m 0 <hash> rockyou.txt`."
+    cost: 20

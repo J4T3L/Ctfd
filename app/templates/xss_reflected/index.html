@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Portal - Reflected XSS Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 650px;">
+        <div style="margin-bottom: 1rem;"><a href="/" style="color: var(--text-secondary); text-decoration: none;">← Hub Portal</a></div>
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">EASY • 100 PTS</span>
+            <h2>Reflected XSS Search Engine</h2>
+            <p>Perform live search queries across corporate document repositories.</p>
+        </div>
+
+        <form action="/xss_reflected/" method="GET" style="margin-bottom: 1.5rem;">
+            <div class="form-group">
+                <label class="form-label" for="q">Search Term Query</label>
+                <input type="text" id="q" name="q" class="form-input" value="{{ query }}" placeholder="<script>alert(1)</script>" required>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Execute Search Query 🔍</button>
+        </form>
+
+        {% if query %}
+        <div class="glass-card" style="padding: 1.5rem;">
+            <h4 style="color: var(--text-secondary); margin-bottom: 0.8rem; font-size: 0.85rem; text-transform: uppercase;">Search Results for</h4>
+            <div style="color: var(--accent-cyan); font-size: 1.1rem;">{{ query | safe }}</div>
+        </div>
+        {% endif %}
+
+        {% if flag %}
+        <div style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 1.5rem; border-radius: 10px; text-align: center;">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">🎉 XSS PAYLOAD EXECUTED! FLAG:</h4>
+            <div style="font-family: var(--font-code); font-size: 1.1rem; color: #fff; background: #040711; padding: 0.8rem; border-radius: 6px;">
+                {{ flag }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

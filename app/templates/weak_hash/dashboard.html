@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Weak Hash Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-card" style="max-width: 580px;">
+        <div class="card-header" style="text-align: left;">
+            <span class="brand-badge">🎉 MD5 CRACK SUCCESS</span>
+            <h2>Authenticated as Admin</h2>
+            <p>Matched MD5 Hash: <code>{{ hash }}</code></p>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); padding: 1.5rem; border-radius: 10px; text-align: center;">
+            <h4 style="color: var(--accent-green); margin-bottom: 0.5rem;">🔑 CHALLENGE FLAG:</h4>
+            <div style="font-family: var(--font-code); font-size: 1.1rem; color: #fff; background: #040711; padding: 0.8rem; border-radius: 6px;">
+                {{ flag }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
