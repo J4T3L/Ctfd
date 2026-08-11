@@ -538,10 +538,10 @@
                 <p class="card-desc">Exiftool metadata extraction.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Image EXIF Metadata', 'FORENSICS', 'exiftool / strings', 'Buka file 26_flag_image.exif.txt. Gunakan perintah terminal strings atau exiftool untuk menemukan tag User Comment.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Image EXIF Metadata', 'FORENSICS', 'exiftool / strings', 'Buka gambar 26_flag_image.jpg. Gunakan perintah terminal strings 26_flag_image.jpg atau exiftool untuk menemukan tag User Comment.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/26_flag_image.exif.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/26_flag_image.jpg" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -549,14 +549,14 @@
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
                     <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
                 </div>
-                <h3 class="card-title" style="margin-top: 0.4rem;">PNG LSB Steganography</h3>
+                <h3 class="card-title" style="margin-top: 0.4rem;">PNG Image LSB Steganography</h3>
                 <p class="card-desc">LSB bitplane extraction.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('PNG LSB Steganography', 'FORENSICS', 'zsteg / Stegsolve', 'Buka file 27_lsb_stego.png.txt. Gunakan zsteg untuk mengunduh bitplane terendah (LSB) Plane 0 pada gambar PNG.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('PNG Image LSB Steganography', 'FORENSICS', 'zsteg / Stegsolve', 'Buka gambar 27_lsb_stego.png. Gunakan zsteg 27_lsb_stego.png untuk mengekstrak bitplane terendah (LSB) Plane 0.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/27_lsb_stego.png.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/27_lsb_stego.png" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -568,10 +568,10 @@
                 <p class="card-desc">Magic Bytes PNG/JPEG repair.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Corrupted Header Fix', 'FORENSICS', 'Hex Editor / xxd', 'Buka file 28_corrupted_header.png.txt. Magic bytes rusak (00 00 00 00). Perbaiki 4 byte awal menjadi header PNG asli (89 50 4E 47).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Corrupted Header Fix', 'FORENSICS', 'Hex Editor / xxd', 'Buka file 28_corrupted_header.png di Hex Editor. Magic bytes 4 byte pertama rusak (00 00 00 00). Perbaiki menjadi 89 50 4E 47 untuk membuka gambar.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/28_corrupted_header.png.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/28_corrupted_header.png" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -583,10 +583,10 @@
                 <p class="card-desc">Foremost file carving.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Disk Partition Carving', 'FORENSICS', 'Autopsy / foremost', 'Buka file 29_disk_carve.raw.txt. Lakukan carving sektor memori mentah unallocated space untuk menemukan file terhapus.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Disk Partition Carving', 'FORENSICS', 'Autopsy / foremost', 'Buka file 29_disk_carve.raw. Lakukan carving sektor memori mentah unallocated space dengan foremost -i 29_disk_carve.raw untuk mengekstrak berkas.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/29_disk_carve.raw.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/29_disk_carve.raw" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -598,10 +598,10 @@
                 <p class="card-desc">Volatility3 process dump.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Volatility Memory Dump', 'FORENSICS', 'volatility3', 'Buka file 30_volatility_memory.dmp.txt. Periksa memori proses lsass.exe PID 1337 untuk mengekstrak string flag.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Volatility Memory Dump', 'FORENSICS', 'volatility3', 'Buka file 30_volatility_memory.dmp. Periksa memori proses lsass.exe PID 1337 dengan volatility3 windows.pslist untuk mengekstrak string flag.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/30_volatility_memory.dmp.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/30_volatility_memory.dmp" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -613,10 +613,10 @@
                 <p class="card-desc">PDF object stream analysis.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Layered PDF Stream', 'FORENSICS', 'pdf-parser / pdfdetach', 'Buka file 31_hidden_stream.pdf.txt. Analisis struktur stream objek PDF 4 0 obj tersembunyi.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Layered PDF Stream', 'FORENSICS', 'pdf-parser / pdfdetach', 'Buka file 31_hidden_stream.pdf. Analisis struktur stream objek PDF dengan pdf-parser -c 31_hidden_stream.pdf untuk mengekstrak stream 4 0 obj.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/31_hidden_stream.pdf.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/31_hidden_stream.pdf" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -643,10 +643,10 @@
                 <p class="card-desc">Audacity spectrogram visualizer.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Audio Spectrogram', 'FORENSICS', 'Audacity / Sonic Visualiser', 'Buka file 33_audio_spectrogram.wav.txt. Buka tampilan audio di Audacity lalu ubah mode Waveform menjadi Spectrogram untuk melihat pesan visual.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Audio Spectrogram', 'FORENSICS', 'Audacity / Sonic Visualiser', 'Buka file 33_audio_spectrogram.wav di Audacity. Ubah mode tampilan audio dari Waveform menjadi Spectrogram untuk melihat visual frekuensi pesan.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/33_audio_spectrogram.wav.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/33_audio_spectrogram.wav" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -658,10 +658,10 @@
                 <p class="card-desc">Browser history query.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Browser SQLite History', 'FORENSICS', 'sqlite3 / DB Browser', 'Buka file 34_history.sqlite.txt. Jalankan query SQL: SELECT url FROM urls WHERE url LIKE \'%secret%\';.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Browser SQLite History', 'FORENSICS', 'sqlite3 / DB Browser', 'Buka file 34_history.sqlite di DB Browser for SQLite. Jalankan query SQL: SELECT url FROM urls WHERE url LIKE \'%secret%\';.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/34_history.sqlite.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/34_history.sqlite" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -673,10 +673,10 @@
                 <p class="card-desc">USB keyboard packet mapping.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('USB HID Keystroke', 'FORENSICS', 'tshark / Python 3', 'Buka file 35_usb_hid_keystrokes.pcap.txt. Petakan hex byte USB HID keycode (0x06=C, 0x17=T, 0x09=F, ...) menjadi tombol keyboard.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('USB HID Keystroke', 'FORENSICS', 'tshark / Python 3', 'Buka file 35_usb_hid_keystrokes.pcap di Wireshark / tshark. Petakan hex byte USB HID keycode (0x06=C, 0x17=T, 0x09=F, ...) menjadi karakter keyboard.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/35_usb_hid_keystrokes.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/35_usb_hid_keystrokes.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
         </section>
@@ -693,10 +693,10 @@
                 <p class="card-desc">Wireshark PCAP POST inspection.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('HTTP Cleartext Packet', 'NETWORK', 'Wireshark / tshark', 'Buka file 36_http_login.pcap.txt. Filter Wireshark dengan http.request.method == &quot;POST&quot;, lalu klik kanan -&gt; Follow TCP Stream.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('HTTP Cleartext Packet', 'NETWORK', 'Wireshark / tshark', 'Buka file 36_http_login.pcap di Wireshark. Filter dengan http.request.method == &quot;POST&quot;, lalu klik kanan -&gt; Follow TCP Stream.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/36_http_login.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/36_http_login.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -708,10 +708,10 @@
                 <p class="card-desc">Base64 DNS Query Decoding.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('DNS Tunneling Exfil', 'NETWORK', 'tshark / CyberChef', 'Buka file 37_dns_queries.pcap.txt. Ambil subdomain query DNS Q1RGe2Ruc183dW5u... lalu decode dari Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('DNS Tunneling Exfil', 'NETWORK', 'tshark / CyberChef', 'Buka file 37_dns_queries.pcap di Wireshark. Ambil subdomain query DNS Q1RGe2Ruc183dW5u... lalu decode dari Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/37_dns_queries.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/37_dns_queries.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -723,10 +723,10 @@
                 <p class="card-desc">FTP Passive Data Stream.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Anonymous FTP Capture', 'NETWORK', 'Wireshark', 'Buka file 38_ftp_passive.pcap.txt. Filter Wireshark dengan ftp-data untuk melihat stream transfer file pasif FTP.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Anonymous FTP Capture', 'NETWORK', 'Wireshark', 'Buka file 38_ftp_passive.pcap di Wireshark. Filter dengan ftp-data untuk melihat stream transfer file pasif FTP.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/38_ftp_passive.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/38_ftp_passive.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -738,10 +738,10 @@
                 <p class="card-desc">ICMP Echo Payload Extraction.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('ICMP Covert Channel', 'NETWORK', 'tshark / CyberChef', 'Buka file 39_icmp_ping.pcap.txt. Ekstrak data payload hex pada paket ICMP Echo Request (43 54 46 7b...), lalu decode Hex ke ASCII.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('ICMP Covert Channel', 'NETWORK', 'tshark / CyberChef', 'Buka file 39_icmp_ping.pcap di Wireshark. Ekstrak data payload hex pada paket ICMP Echo Request (43 54 46 7b...), lalu decode Hex ke ASCII.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/39_icmp_ping.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/39_icmp_ping.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -753,10 +753,10 @@
                 <p class="card-desc">Wireshark SSLKEYLOGFILE Import.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('SSL/TLS Keylog Decrypt', 'NETWORK', 'Wireshark TLS Preferences', 'Buka file 40_tls_keylog.pcap.txt. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('SSL/TLS Keylog Decrypt', 'NETWORK', 'Wireshark TLS Preferences', 'Buka file 40_tls_keylog.pcap di Wireshark. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename).')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/40_tls_keylog.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/40_tls_keylog.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -768,10 +768,10 @@
                 <p class="card-desc">ARP MITM Packet Inspection.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('ARP Spoofing Analysis', 'NETWORK', 'Wireshark', 'Buka file 41_arp_mitm.pcap.txt. Cari paket ARP Reply bermerek Man-in-the-Middle untuk mendeteksi data yang disadap.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('ARP Spoofing Analysis', 'NETWORK', 'Wireshark', 'Buka file 41_arp_mitm.pcap di Wireshark. Cari paket ARP Reply bermerek Man-in-the-Middle untuk mendeteksi data yang disadap.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/41_arp_mitm.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/41_arp_mitm.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -783,10 +783,10 @@
                 <p class="card-desc">Telnet TCP Stream Credentials.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Unencrypted Telnet', 'NETWORK', 'Wireshark', 'Buka file 42_telnet_stream.pcap.txt. Filter telnet pada Wireshark lalu Follow TCP Stream pada port 23 untuk membaca password.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Unencrypted Telnet', 'NETWORK', 'Wireshark', 'Buka file 42_telnet_stream.pcap di Wireshark. Filter telnet lalu Follow TCP Stream pada port 23 untuk membaca password.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/42_telnet_stream.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/42_telnet_stream.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -798,10 +798,10 @@
                 <p class="card-desc">MQTT Topic Subscription Leak.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('IoT MQTT Packet Sniff', 'NETWORK', 'Wireshark / mosquitto_sub', 'Buka file 43_mqtt_broker.pcap.txt. Filter Wireshark mqtt lalu periksa payload pada topic /sensors/vault/security.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('IoT MQTT Packet Sniff', 'NETWORK', 'Wireshark / mosquitto_sub', 'Buka file 43_mqtt_broker.pcap di Wireshark. Filter mqtt lalu periksa payload pada topic /sensors/vault/security.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/43_mqtt_broker.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/43_mqtt_broker.pcap" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
         </section>
@@ -818,10 +818,10 @@
                 <p class="card-desc">Strings & Symbols extraction.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('ELF Compiled Strings', 'REVERSE', 'strings / ghidra', 'Buka file 44_elf_strings.bin. Jalankan perintah terminal strings 44_elf_strings.bin | grep CTF untuk membaca string biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('ELF Compiled Strings', 'REVERSE', 'strings / ghidra', 'Buka file 44_elf_strings.elf. Jalankan perintah terminal strings 44_elf_strings.elf | grep CTF untuk membaca string biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/44_elf_strings.bin" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/44_elf_strings.elf" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -833,10 +833,10 @@
                 <p class="card-desc">Uncompyle6 decompilation.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Python Bytecode (.pyc)', 'REVERSE', 'uncompyle6 / decompyle++', 'Buka file 45_app.pyc.txt. Dekompilasi opcode Python 3.11 bytecode LOAD_CONST ke kode sumber Python murni.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Python Bytecode (.pyc)', 'REVERSE', 'uncompyle6 / decompyle++', 'Buka file 45_app.pyc. Dekompilasi bytecode .pyc Python 3.11 dengan uncompyle6 45_app.pyc ke kode sumber Python murni.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/45_app.pyc.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/45_app.pyc" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -848,10 +848,10 @@
                 <p class="card-desc">JADX Java decompilation.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Java Class Decompile', 'REVERSE', 'jadx-gui / cfr', 'Buka file 46_Challenge.class.txt. Buka bytecode .class Java menggunakan decompiler jadx-gui.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Java Class Decompile', 'REVERSE', 'jadx-gui / cfr', 'Buka file 46_Challenge.class. Buka bytecode .class Java menggunakan decompiler jadx-gui 46_Challenge.class.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/46_Challenge.class.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/46_Challenge.class" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -863,10 +863,10 @@
                 <p class="card-desc">Ghidra / GDB strcmp analysis.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('C ELF Crackme Logic', 'REVERSE', 'Ghidra / GDB', 'Buka file 47_crackme.c. Periksa logika pemanggilan fungsi strcmp(key, &quot;SUP3R_S3CR37_K3Y_2026&quot;) pada kode sumber C.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('C ELF Crackme Logic', 'REVERSE', 'Ghidra / GDB', 'Buka file 47_crackme.elf di Ghidra. Periksa logika pemanggilan fungsi strcmp(key, &quot;SUP3R_S3CR37_K3Y_2026&quot;) pada fungsi main.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/47_crackme.c" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/47_crackme.elf" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -893,10 +893,10 @@
                 <p class="card-desc">Stack overwrite return address.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('x86 BOF ret2win', 'REVERSE', 'pwntools / gdb-pwndbg', 'Buka file 49_bof_ret2win.c. Kerentanan gets(buffer) memungkinkan Buffer Overflow untuk meng-overwrite return address EIP ke alamat win().')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('x86 BOF ret2win', 'REVERSE', 'pwntools / gdb-pwndbg', 'Buka biner 49_bof_ret2win.elf di Ghidra/GDB. Kerentanan gets(buffer) memungkinkan Buffer Overflow untuk meng-overwrite return address EIP ke alamat win().')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/49_bof_ret2win.c" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/49_bof_ret2win.elf" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
             <div class="glass-card">
@@ -908,10 +908,10 @@
                 <p class="card-desc">UPX unpack & anti-debug.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('UPX Packed Unpacking', 'REVERSE', 'upx -d / x64dbg', 'Buka file 50_upx_packed.bin. Dekompresi biner UPX dengan perintah upx -d 50_upx_packed.bin sebelum melakukan analisis biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('UPX Packed Unpacking', 'REVERSE', 'upx -d / x64dbg', 'Buka biner 50_upx_packed.elf. Dekompresi biner UPX dengan perintah upx -d 50_upx_packed.elf sebelum melakukan analisis biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
-                    <a href="/handout/50_upx_packed.bin" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                    <a href="/handout/50_upx_packed.elf" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
                 </div>
             </div>
         </section>

@@ -5,7 +5,7 @@ description: |
   Tantangan Digital Forensics (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/26_flag_image.exif.txt](https://target.paradick.my.id/handout/26_flag_image.exif.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/26_flag_image.jpg](https://target.paradick.my.id/handout/26_flag_image.jpg)
 
 value: 50
 type: standard
@@ -19,5 +19,5 @@ tags:
   - easy
 
 hints:
-  - content: "💡 Tool Recommended: `exiftool` / `strings`. Ekstrak tag Exif/Comment pada gambar."
+  - content: "💡 Tool Recommended: `exiftool` / `strings`. Ekstrak tag Exif/Comment pada gambar JPG."
     cost: 5

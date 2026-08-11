@@ -5,7 +5,7 @@ description: |
   Tantangan Reverse Engineering (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/47_crackme.c](https://target.paradick.my.id/handout/47_crackme.c)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/47_crackme.elf](https://target.paradick.my.id/handout/47_crackme.elf)
 
 value: 300
 type: standard

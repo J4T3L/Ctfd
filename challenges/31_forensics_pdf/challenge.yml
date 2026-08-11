@@ -5,7 +5,7 @@ description: |
   Tantangan Digital Forensics (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/31_hidden_stream.pdf.txt](https://target.paradick.my.id/handout/31_hidden_stream.pdf.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/31_hidden_stream.pdf](https://target.paradick.my.id/handout/31_hidden_stream.pdf)
 
 value: 250
 type: standard
@@ -19,5 +19,5 @@ tags:
   - medium
 
 hints:
-  - content: "💡 Tool Recommended: `pdf-parser` / `pdfid`. Analisis stream objek PDF tersembunyi."
+  - content: "💡 Tool Recommended: `pdf-parser` / `pdfdetach`. Analisis stream objek PDF tersembunyi."
     cost: 25

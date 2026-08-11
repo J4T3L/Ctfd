@@ -5,7 +5,7 @@ description: |
   Tantangan Digital Forensics (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/28_corrupted_header.png.txt](https://target.paradick.my.id/handout/28_corrupted_header.png.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/28_corrupted_header.png](https://target.paradick.my.id/handout/28_corrupted_header.png)
 
 value: 200
 type: standard
@@ -19,5 +19,5 @@ tags:
   - medium
 
 hints:
-  - content: "💡 Tool Recommended: `hexeditor` / `xxd`. Perbaiki 8 byte pertama magic bytes header PNG (`89 50 4E 47`)."
+  - content: "💡 Tool Recommended: `hexeditor` / `xxd`. Perbaiki 4 byte pertama magic bytes header PNG (`89 50 4E 47`)."
     cost: 20

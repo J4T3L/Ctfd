@@ -5,7 +5,7 @@ description: |
   Tantangan Network Sniffing (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/43_mqtt_broker.pcap.txt](https://target.paradick.my.id/handout/43_mqtt_broker.pcap.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/43_mqtt_broker.pcap](https://target.paradick.my.id/handout/43_mqtt_broker.pcap)
 
 value: 300
 type: standard

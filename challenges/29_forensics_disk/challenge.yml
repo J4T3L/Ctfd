@@ -5,7 +5,7 @@ description: |
   Tantangan Digital Forensics (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/29_disk_carve.raw.txt](https://target.paradick.my.id/handout/29_disk_carve.raw.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/29_disk_carve.raw](https://target.paradick.my.id/handout/29_disk_carve.raw)
 
 value: 300
 type: standard
@@ -19,5 +19,5 @@ tags:
   - medium
 
 hints:
-  - content: "💡 Tool Recommended: `autopsy` / `foremost` / `scalpel`. Carving berkas terhapus dari disk image."
+  - content: "💡 Tool Recommended: `autopsy` / `foremost` / `scalpel`. Carving berkas terhapus dari disk image raw."
     cost: 30

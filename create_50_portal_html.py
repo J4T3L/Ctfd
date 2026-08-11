@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
 Generator for app/templates/portal.html featuring:
-- 50 Multi-Category CTF Challenge Cards
+- 50 Multi-Category CTF Challenge Cards with REAL native binary URLs (.pcap, .zip, .pyc, .class, .wav, .jpg, .png, .raw, .pdf, .sqlite, .elf)
 - Interactive Glassmorphism Hint & Recommended Tools Modal Popup
-- Jinja2 Raw escaping for hint payloads
 """
 import os
 
@@ -41,35 +40,35 @@ CHALLENGES = [
     ("crypto-25", "Diffie-Hellman Weak Mod", "crypto", "HARD", 500, "Diffie-Hellman Discrete Logarithm.", "/handout/25_dh_params.json", "SageMath / Pari-GP", "Buka file 25_dh_params.json. Hitung Discrete Logarithm Problem g^a = A (mod p) pada p=23 yang sangat kecil menggunakan SageMath (a=6, s=12). Flag: CTF{12}."),
 
     # 🔍 3. Digital Forensics (10)
-    ("forensics-26", "Image EXIF Metadata", "forensics", "EASY", 50, "Exiftool metadata extraction.", "/handout/26_flag_image.exif.txt", "exiftool / strings", "Buka file 26_flag_image.exif.txt. Gunakan perintah terminal strings atau exiftool untuk menemukan tag User Comment."),
-    ("forensics-27", "PNG LSB Steganography", "forensics", "MEDIUM", 150, "LSB bitplane extraction.", "/handout/27_lsb_stego.png.txt", "zsteg / Stegsolve", "Buka file 27_lsb_stego.png.txt. Gunakan zsteg untuk mengunduh bitplane terendah (LSB) Plane 0 pada gambar PNG."),
-    ("forensics-28", "Corrupted Header Fix", "forensics", "MEDIUM", 200, "Magic Bytes PNG/JPEG repair.", "/handout/28_corrupted_header.png.txt", "Hex Editor / xxd", "Buka file 28_corrupted_header.png.txt. Magic bytes rusak (00 00 00 00). Perbaiki 4 byte awal menjadi header PNG asli (89 50 4E 47)."),
-    ("forensics-29", "Disk Partition Carving", "forensics", "MEDIUM", 300, "Foremost file carving.", "/handout/29_disk_carve.raw.txt", "Autopsy / foremost", "Buka file 29_disk_carve.raw.txt. Lakukan carving sektor memori mentah unallocated space untuk menemukan file terhapus."),
-    ("forensics-30", "Volatility Memory Dump", "forensics", "HARD", 450, "Volatility3 process dump.", "/handout/30_volatility_memory.dmp.txt", "volatility3", "Buka file 30_volatility_memory.dmp.txt. Periksa memori proses lsass.exe PID 1337 untuk mengekstrak string flag."),
-    ("forensics-31", "Layered PDF Stream", "forensics", "MEDIUM", 250, "PDF object stream analysis.", "/handout/31_hidden_stream.pdf.txt", "pdf-parser / pdfdetach", "Buka file 31_hidden_stream.pdf.txt. Analisis struktur stream objek PDF 4 0 obj tersembunyi."),
+    ("forensics-26", "Image EXIF Metadata", "forensics", "EASY", 50, "Exiftool metadata extraction.", "/handout/26_flag_image.jpg", "exiftool / strings", "Buka gambar 26_flag_image.jpg. Gunakan perintah terminal strings 26_flag_image.jpg atau exiftool untuk menemukan tag User Comment."),
+    ("forensics-27", "PNG Image LSB Steganography", "forensics", "MEDIUM", 150, "LSB bitplane extraction.", "/handout/27_lsb_stego.png", "zsteg / Stegsolve", "Buka gambar 27_lsb_stego.png. Gunakan zsteg 27_lsb_stego.png untuk mengekstrak bitplane terendah (LSB) Plane 0."),
+    ("forensics-28", "Corrupted Header Fix", "forensics", "MEDIUM", 200, "Magic Bytes PNG/JPEG repair.", "/handout/28_corrupted_header.png", "Hex Editor / xxd", "Buka file 28_corrupted_header.png di Hex Editor. Magic bytes 4 byte pertama rusak (00 00 00 00). Perbaiki menjadi 89 50 4E 47 untuk membuka gambar."),
+    ("forensics-29", "Disk Partition Carving", "forensics", "MEDIUM", 300, "Foremost file carving.", "/handout/29_disk_carve.raw", "Autopsy / foremost", "Buka file 29_disk_carve.raw. Lakukan carving sektor memori mentah unallocated space dengan foremost -i 29_disk_carve.raw untuk mengekstrak berkas."),
+    ("forensics-30", "Volatility Memory Dump", "forensics", "HARD", 450, "Volatility3 process dump.", "/handout/30_volatility_memory.dmp", "volatility3", "Buka file 30_volatility_memory.dmp. Periksa memori proses lsass.exe PID 1337 dengan volatility3 windows.pslist untuk mengekstrak string flag."),
+    ("forensics-31", "Layered PDF Stream", "forensics", "MEDIUM", 250, "PDF object stream analysis.", "/handout/31_hidden_stream.pdf", "pdf-parser / pdfdetach", "Buka file 31_hidden_stream.pdf. Analisis struktur stream objek PDF dengan pdf-parser -c 31_hidden_stream.pdf untuk mengekstrak stream 4 0 obj."),
     ("forensics-32", "Encrypted ZIP Crack", "forensics", "MEDIUM", 200, "ZIP2John password cracking.", "/handout/32_encrypted_secret.zip", "zip2john & john", "Unduh file 32_encrypted_secret.zip. Ekstrak hash dengan zip2john 32_encrypted_secret.zip &gt; hash.txt lalu crack dengan john --wordlist=rockyou.txt hash.txt."),
-    ("forensics-33", "Audio Spectrogram", "forensics", "HARD", 350, "Audacity spectrogram visualizer.", "/handout/33_audio_spectrogram.wav.txt", "Audacity / Sonic Visualiser", "Buka file 33_audio_spectrogram.wav.txt. Buka tampilan audio di Audacity lalu ubah mode Waveform menjadi Spectrogram untuk melihat pesan visual."),
-    ("forensics-34", "Browser SQLite History", "forensics", "MEDIUM", 250, "Browser history query.", "/handout/34_history.sqlite.txt", "sqlite3 / DB Browser", "Buka file 34_history.sqlite.txt. Jalankan query SQL: SELECT url FROM urls WHERE url LIKE '%secret%';."),
-    ("35-usb", "USB HID Keystroke", "forensics", "HARD", 400, "USB keyboard packet mapping.", "/handout/35_usb_hid_keystrokes.pcap.txt", "tshark / Python 3", "Buka file 35_usb_hid_keystrokes.pcap.txt. Petakan hex byte USB HID keycode (0x06=C, 0x17=T, 0x09=F, ...) menjadi tombol keyboard."),
+    ("forensics-33", "Audio Spectrogram", "forensics", "HARD", 350, "Audacity spectrogram visualizer.", "/handout/33_audio_spectrogram.wav", "Audacity / Sonic Visualiser", "Buka file 33_audio_spectrogram.wav di Audacity. Ubah mode tampilan audio dari Waveform menjadi Spectrogram untuk melihat visual frekuensi pesan."),
+    ("forensics-34", "Browser SQLite History", "forensics", "MEDIUM", 250, "Browser history query.", "/handout/34_history.sqlite", "sqlite3 / DB Browser", "Buka file 34_history.sqlite di DB Browser for SQLite. Jalankan query SQL: SELECT url FROM urls WHERE url LIKE '%secret%';."),
+    ("35-usb", "USB HID Keystroke", "forensics", "HARD", 400, "USB keyboard packet mapping.", "/handout/35_usb_hid_keystrokes.pcap", "tshark / Python 3", "Buka file 35_usb_hid_keystrokes.pcap di Wireshark / tshark. Petakan hex byte USB HID keycode (0x06=C, 0x17=T, 0x09=F, ...) menjadi karakter keyboard."),
 
     # 📡 4. Network Sniffing (8)
-    ("net-36", "HTTP Cleartext Packet", "network", "EASY", 100, "Wireshark PCAP POST inspection.", "/handout/36_http_login.pcap.txt", "Wireshark / tshark", "Buka file 36_http_login.pcap.txt. Filter Wireshark dengan http.request.method == \"POST\", lalu klik kanan -&gt; Follow TCP Stream."),
-    ("net-37", "DNS Tunneling Exfil", "network", "MEDIUM", 300, "Base64 DNS Query Decoding.", "/handout/37_dns_queries.pcap.txt", "tshark / CyberChef", "Buka file 37_dns_queries.pcap.txt. Ambil subdomain query DNS Q1RGe2Ruc183dW5u... lalu decode dari Base64."),
-    ("net-38", "Anonymous FTP Capture", "network", "MEDIUM", 150, "FTP Passive Data Stream.", "/handout/38_ftp_passive.pcap.txt", "Wireshark", "Buka file 38_ftp_passive.pcap.txt. Filter Wireshark dengan ftp-data untuk melihat stream transfer file pasif FTP."),
-    ("net-39", "ICMP Covert Channel", "network", "HARD", 350, "ICMP Echo Payload Extraction.", "/handout/39_icmp_ping.pcap.txt", "tshark / CyberChef", "Buka file 39_icmp_ping.pcap.txt. Ekstrak data payload hex pada paket ICMP Echo Request (43 54 46 7b...), lalu decode Hex ke ASCII."),
-    ("net-40", "SSL/TLS Keylog Decrypt", "network", "HARD", 400, "Wireshark SSLKEYLOGFILE Import.", "/handout/40_tls_keylog.pcap.txt", "Wireshark TLS Preferences", "Buka file 40_tls_keylog.pcap.txt. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename)."),
-    ("net-41", "ARP Spoofing Analysis", "network", "MEDIUM", 250, "ARP MITM Packet Inspection.", "/handout/41_arp_mitm.pcap.txt", "Wireshark", "Buka file 41_arp_mitm.pcap.txt. Cari paket ARP Reply bermerek Man-in-the-Middle untuk mendeteksi data yang disadap."),
-    ("net-42", "Unencrypted Telnet", "network", "EASY", 100, "Telnet TCP Stream Credentials.", "/handout/42_telnet_stream.pcap.txt", "Wireshark", "Buka file 42_telnet_stream.pcap.txt. Filter telnet pada Wireshark lalu Follow TCP Stream pada port 23 untuk membaca password."),
-    ("net-43", "IoT MQTT Packet Sniff", "network", "MEDIUM", 300, "MQTT Topic Subscription Leak.", "/handout/43_mqtt_broker.pcap.txt", "Wireshark / mosquitto_sub", "Buka file 43_mqtt_broker.pcap.txt. Filter Wireshark mqtt lalu periksa payload pada topic /sensors/vault/security."),
+    ("net-36", "HTTP Cleartext Packet", "network", "EASY", 100, "Wireshark PCAP POST inspection.", "/handout/36_http_login.pcap", "Wireshark / tshark", "Buka file 36_http_login.pcap di Wireshark. Filter dengan http.request.method == \"POST\", lalu klik kanan -&gt; Follow TCP Stream."),
+    ("net-37", "DNS Tunneling Exfil", "network", "MEDIUM", 300, "Base64 DNS Query Decoding.", "/handout/37_dns_queries.pcap", "tshark / CyberChef", "Buka file 37_dns_queries.pcap di Wireshark. Ambil subdomain query DNS Q1RGe2Ruc183dW5u... lalu decode dari Base64."),
+    ("net-38", "Anonymous FTP Capture", "network", "MEDIUM", 150, "FTP Passive Data Stream.", "/handout/38_ftp_passive.pcap", "Wireshark", "Buka file 38_ftp_passive.pcap di Wireshark. Filter dengan ftp-data untuk melihat stream transfer file pasif FTP."),
+    ("net-39", "ICMP Covert Channel", "network", "HARD", 350, "ICMP Echo Payload Extraction.", "/handout/39_icmp_ping.pcap", "tshark / CyberChef", "Buka file 39_icmp_ping.pcap di Wireshark. Ekstrak data payload hex pada paket ICMP Echo Request (43 54 46 7b...), lalu decode Hex ke ASCII."),
+    ("net-40", "SSL/TLS Keylog Decrypt", "network", "HARD", 400, "Wireshark SSLKEYLOGFILE Import.", "/handout/40_tls_keylog.pcap", "Wireshark TLS Preferences", "Buka file 40_tls_keylog.pcap di Wireshark. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename)."),
+    ("net-41", "ARP Spoofing Analysis", "network", "MEDIUM", 250, "ARP MITM Packet Inspection.", "/handout/41_arp_mitm.pcap", "Wireshark", "Buka file 41_arp_mitm.pcap di Wireshark. Cari paket ARP Reply bermerek Man-in-the-Middle untuk mendeteksi data yang disadap."),
+    ("net-42", "Unencrypted Telnet", "network", "EASY", 100, "Telnet TCP Stream Credentials.", "/handout/42_telnet_stream.pcap", "Wireshark", "Buka file 42_telnet_stream.pcap di Wireshark. Filter telnet lalu Follow TCP Stream pada port 23 untuk membaca password."),
+    ("net-43", "IoT MQTT Packet Sniff", "network", "MEDIUM", 300, "MQTT Topic Subscription Leak.", "/handout/43_mqtt_broker.pcap", "Wireshark / mosquitto_sub", "Buka file 43_mqtt_broker.pcap di Wireshark. Filter mqtt lalu periksa payload pada topic /sensors/vault/security."),
 
     # ⚙️ 5. Reverse Engineering (7)
-    ("rev-44", "ELF Compiled Strings", "reverse", "EASY", 50, "Strings & Symbols extraction.", "/handout/44_elf_strings.bin", "strings / ghidra", "Buka file 44_elf_strings.bin. Jalankan perintah terminal strings 44_elf_strings.bin | grep CTF untuk membaca string biner."),
-    ("rev-45", "Python Bytecode (.pyc)", "reverse", "MEDIUM", 150, "Uncompyle6 decompilation.", "/handout/45_app.pyc.txt", "uncompyle6 / decompyle++", "Buka file 45_app.pyc.txt. Dekompilasi opcode Python 3.11 bytecode LOAD_CONST ke kode sumber Python murni."),
-    ("rev-46", "Java Class Decompile", "reverse", "MEDIUM", 200, "JADX Java decompilation.", "/handout/46_Challenge.class.txt", "jadx-gui / cfr", "Buka file 46_Challenge.class.txt. Buka bytecode .class Java menggunakan decompiler jadx-gui."),
-    ("rev-47", "C ELF Crackme Logic", "reverse", "MEDIUM", 300, "Ghidra / GDB strcmp analysis.", "/handout/47_crackme.c", "Ghidra / GDB", "Buka file 47_crackme.c. Periksa logika pemanggilan fungsi strcmp(key, \"SUP3R_S3CR37_K3Y_2026\") pada kode sumber C."),
+    ("rev-44", "ELF Compiled Strings", "reverse", "EASY", 50, "Strings & Symbols extraction.", "/handout/44_elf_strings.elf", "strings / ghidra", "Buka file 44_elf_strings.elf. Jalankan perintah terminal strings 44_elf_strings.elf | grep CTF untuk membaca string biner."),
+    ("rev-45", "Python Bytecode (.pyc)", "reverse", "MEDIUM", 150, "Uncompyle6 decompilation.", "/handout/45_app.pyc", "uncompyle6 / decompyle++", "Buka file 45_app.pyc. Dekompilasi bytecode .pyc Python 3.11 dengan uncompyle6 45_app.pyc ke kode sumber Python murni."),
+    ("rev-46", "Java Class Decompile", "reverse", "MEDIUM", 200, "JADX Java decompilation.", "/handout/46_Challenge.class", "jadx-gui / cfr", "Buka file 46_Challenge.class. Buka bytecode .class Java menggunakan decompiler jadx-gui 46_Challenge.class."),
+    ("rev-47", "C ELF Crackme Logic", "reverse", "MEDIUM", 300, "Ghidra / GDB strcmp analysis.", "/handout/47_crackme.elf", "Ghidra / GDB", "Buka file 47_crackme.elf di Ghidra. Periksa logika pemanggilan fungsi strcmp(key, \"SUP3R_S3CR37_K3Y_2026\") pada fungsi main."),
     ("rev-48", "Android APK Smali", "reverse", "HARD", 350, "Smali code logic analysis.", "/handout/48_app_smali.txt", "jadx-gui / apktool", "Buka file 48_app_smali.txt. Periksa disassembly kode Smali const-string v0 pada kelas MainActivity."),
-    ("rev-49", "x86 BOF ret2win", "reverse", "HARD", 450, "Stack overwrite return address.", "/handout/49_bof_ret2win.c", "pwntools / gdb-pwndbg", "Buka file 49_bof_ret2win.c. Kerentanan gets(buffer) memungkinkan Buffer Overflow untuk meng-overwrite return address EIP ke alamat win()."),
-    ("rev-50", "UPX Packed Unpacking", "reverse", "HARD", 500, "UPX unpack & anti-debug.", "/handout/50_upx_packed.bin", "upx -d / x64dbg", "Buka file 50_upx_packed.bin. Dekompresi biner UPX dengan perintah upx -d 50_upx_packed.bin sebelum melakukan analisis biner.")
+    ("rev-49", "x86 BOF ret2win", "reverse", "HARD", 450, "Stack overwrite return address.", "/handout/49_bof_ret2win.elf", "pwntools / gdb-pwndbg", "Buka biner 49_bof_ret2win.elf di Ghidra/GDB. Kerentanan gets(buffer) memungkinkan Buffer Overflow untuk meng-overwrite return address EIP ke alamat win()."),
+    ("rev-50", "UPX Packed Unpacking", "reverse", "HARD", 500, "UPX unpack & anti-debug.", "/handout/50_upx_packed.elf", "upx -d / x64dbg", "Buka biner 50_upx_packed.elf. Dekompresi biner UPX dengan perintah upx -d 50_upx_packed.elf sebelum melakukan analisis biner.")
 ]
 
 def generate_portal():
@@ -347,4 +346,4 @@ def generate_portal():
 
 if __name__ == "__main__":
     generate_portal()
-    print("[🎉] portal.html generated cleanly!")
+    print("[🎉] portal.html generated cleanly with REAL native binary URLs!")
