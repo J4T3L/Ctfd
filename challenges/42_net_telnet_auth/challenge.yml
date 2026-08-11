@@ -5,7 +5,7 @@ description: |
   Tantangan Network Sniffing (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/http_traffic.pcap.txt](https://target.paradick.my.id/handout/http_traffic.pcap.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/42_telnet_stream.pcap.txt](https://target.paradick.my.id/handout/42_telnet_stream.pcap.txt)
 
 value: 100
 type: standard

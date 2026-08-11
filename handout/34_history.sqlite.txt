@@ -1,0 +1,2 @@
+Chrome History SQLite Dump:
+table urls (id=42, url='https://target.paradick.my.id/secret?flag=CTF{br0ws3r_h1s70ry_sql173_2026}')

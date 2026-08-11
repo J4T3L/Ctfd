@@ -5,7 +5,7 @@ description: |
   Tantangan Cryptography (HARD).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/rsa_low_e.json](https://target.paradick.my.id/handout/rsa_low_e.json)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/25_dh_params.json](https://target.paradick.my.id/handout/25_dh_params.json)
 
 value: 500
 type: standard

@@ -1,0 +1,2 @@
+WAV Audio Data Stream
+Spectrogram Visual Frequencies: CTF{4ud10_sp3c7r0gr4m_s73g0_2026}

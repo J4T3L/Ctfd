@@ -1,0 +1,6 @@
+PDF Object 4 0 obj
+<< /Length 42 /Filter /FlateDecode >>
+stream
+CTF{pdf_h1dd3n_s7r34m_2026}
+endstream
+endobj

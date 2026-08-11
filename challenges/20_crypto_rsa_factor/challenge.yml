@@ -5,7 +5,7 @@ description: |
   Tantangan Cryptography (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/rsa_low_e.json](https://target.paradick.my.id/handout/rsa_low_e.json)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/20_rsa_factor.json](https://target.paradick.my.id/handout/20_rsa_factor.json)
 
 value: 350
 type: standard

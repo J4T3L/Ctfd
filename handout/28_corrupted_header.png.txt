@@ -1,0 +1,3 @@
+Hex Dump:
+00000000: XX XX XX XX 0D 0A 1A 0A 00 00 00 0D 49 48 44 52  ........IHDR
+Corrupted Magic Bytes! Replace XX XX XX XX with 89 50 4E 47 to reveal flag: CTF{f1l3_h34d3r_m4g1c_by73s_f1x_2026}

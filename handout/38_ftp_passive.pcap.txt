@@ -1,0 +1,2 @@
+FTP Passive Data Transfer Stream (Port 2021):
+STOR secret_flag.txt -> CTF{f7p_p4ss1v3_d474_7r4nsf3r_2026}

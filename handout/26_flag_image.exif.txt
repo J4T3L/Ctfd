@@ -1,0 +1,4 @@
+File Name: evidence.jpg
+Camera: Canon EOS
+Comment: CTF{3x1f_m374d474_3x7r4c710n_2026}
+Resolution: 1920x1080

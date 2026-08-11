@@ -1,0 +1,4 @@
+Java Bytecode Class:
+public class Challenge {
+    public static String flag = "CTF{j4v4_d3c0mp1l3r_j4dx_2026}";
+}

@@ -1,0 +1,2 @@
+Ciphertext: PGF{c43f4e_c1ph3r_r0t13_m4sg3r_2026}
+Algorithm: Caesar Shift / ROT13

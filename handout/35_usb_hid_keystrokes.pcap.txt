@@ -1,0 +1,2 @@
+USB HID Capture Data:
+00 00 06 00 ... (Keycodes mapped to string: CTF{usb_k3ys7r0k3_r3c0ns7ruc710n_2026})

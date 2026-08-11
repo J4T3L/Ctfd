@@ -5,7 +5,7 @@ description: |
   Tantangan Network Sniffing (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/http_traffic.pcap.txt](https://target.paradick.my.id/handout/http_traffic.pcap.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/37_dns_queries.pcap.txt](https://target.paradick.my.id/handout/37_dns_queries.pcap.txt)
 
 value: 300
 type: standard

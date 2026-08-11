@@ -1,0 +1,2 @@
+PNG Image Bitplane Data:
+LSB Plane 0 extracted text: CTF{lsb_st3g4n0gr4phy_3x7r4c73d_2026}

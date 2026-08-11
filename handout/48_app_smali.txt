@@ -1,0 +1,5 @@
+.class public Lcom/example/ctf/MainActivity;
+.method public getFlag()Ljava/lang/String;
+    const-string v0, "CTF{4ndr01d_4pk_sm4l1_r3v3rs3_2026}"
+    return-object v0
+.end method

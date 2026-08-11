@@ -1,0 +1,2 @@
+SSLKEYLOGFILE:
+CLIENT_RANDOM 4a2b3c... -> Decrypted HTTPS GET /flag -> CTF{7ls_d3cryp710n_k3yl0gf1l3_2026}

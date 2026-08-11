@@ -1,0 +1,2 @@
+ARP Poisoning Packet Log:
+ARP Reply: 192.168.1.1 is at 00:11:22:33:44:55 (Attacker MITM Flag: CTF{4rp_sp00f1ng_m17m_2026})

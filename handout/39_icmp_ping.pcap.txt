@@ -1,0 +1,2 @@
+ICMP Echo Request Packets:
+ICMP Payload Data bytes: 43 54 46 7b 31 63 6d 70 5f 63 30 76 33 72 37 5f 63 68 34 6e 6e 33 6c 5f 32 30 32 36 7d -> CTF{1cmp_c0v3r7_ch4nn3l_2026}

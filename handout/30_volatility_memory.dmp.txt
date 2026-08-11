@@ -1,0 +1,2 @@
+Volatility 3 Memory Process Dump (PID 1337):
+lsass.exe memory map dump -> Flag: CTF{v0l471l17y_m3m0ry_f0r3ns1cs_2026}

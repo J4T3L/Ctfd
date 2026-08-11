@@ -5,7 +5,7 @@ description: |
   Tantangan Reverse Engineering (HARD).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/crackme_source.c](https://target.paradick.my.id/handout/crackme_source.c)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/49_bof_ret2win.c](https://target.paradick.my.id/handout/49_bof_ret2win.c)
 
 value: 450
 type: standard

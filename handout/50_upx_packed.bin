@@ -1,0 +1,2 @@
+UPX! Packed Executable Header
+Unpack command: upx -d 50_upx_packed.bin -> Unpacked Flag: CTF{upx_unp4ck3d_b1n4ry_2026}

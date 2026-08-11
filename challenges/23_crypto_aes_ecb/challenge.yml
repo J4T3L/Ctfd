@@ -5,7 +5,7 @@ description: |
   Tantangan Cryptography (HARD).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/handout/caesar_cipher.txt](https://target.paradick.my.id/handout/caesar_cipher.txt)
+  **Target Link / Handout**: [https://target.paradick.my.id/handout/23_aes_ecb.hex](https://target.paradick.my.id/handout/23_aes_ecb.hex)
 
 value: 400
 type: standard

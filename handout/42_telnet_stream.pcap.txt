@@ -1,0 +1,4 @@
+Telnet Plaintext Session (Port 23):
+login: admin
+password: secretadminpassword
+cat flag.txt -> CTF{73ln37_c134r73x7_l0g1n_2026}

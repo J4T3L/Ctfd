@@ -1,0 +1,3 @@
+Wireshark PCAP Stream:
+POST /login HTTP/1.1
+Data: user=admin&pass=12345&flag=CTF{c134r73x7_p4ck37_sn1ff3d_2026}

@@ -1,0 +1,3 @@
+[Disk Dump Sector 0x4000]
+Unallocated space carving result:
+FOUND DELETED FILE: flag.txt -> CTF{d1sk_c4rv1ng_f0r3ns1cs_2026}

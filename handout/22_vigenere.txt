@@ -1,0 +1,3 @@
+Ciphertext: MBD{v1g3n3r3_c1ph3r_4n4lys1s_2026}
+Key: KEY
+Format: Vigenere Cipher
