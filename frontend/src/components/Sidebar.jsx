@@ -2,30 +2,33 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   Shield, LayoutDashboard, KeyRound, FileText, UserCheck, 
-  FolderOpen, Terminal, Globe, Search, Ticket, ShoppingCart, Cpu, Bot
+  FolderOpen, Terminal, Globe, Search, Ticket, ShoppingCart, Cpu, Bot, Hash, Code
 } from 'lucide-react';
 
 export default function Sidebar() {
   const modules = [
-    { label: 'SaaS Platform Home', path: '/', icon: Shield, badge: 'Home' },
-    { label: 'SOC Dashboard', path: '/dashboard', icon: LayoutDashboard, badge: 'SOC' },
+    { label: 'SaaS Platform Home', path: '/', icon: Shield },
+    { label: 'SOC Dashboard', path: '/dashboard', icon: LayoutDashboard },
     
-    // Easy Modules
+    // Easy Modules (5)
     { label: 'Staff Login Portal', path: '/app/sqli', icon: KeyRound, category: 'EASY', vuln: 'SQLi' },
+    { label: 'Hidden Comments', path: '/app/comment', icon: Code, category: 'EASY', vuln: 'Comment' },
     { label: 'Robots Directive Recon', path: '/app/robots', icon: Bot, category: 'EASY', vuln: 'Robots' },
     { label: 'Threat SIEM Search', path: '/app/xss', icon: Search, category: 'EASY', vuln: 'XSS' },
     { label: 'Cookie Session Manager', path: '/app/cookie', icon: Ticket, category: 'EASY', vuln: 'Cookie' },
     
-    // Medium Modules
+    // Medium Modules (5)
     { label: 'User Profile Directory', path: '/app/idor', icon: UserCheck, category: 'MEDIUM', vuln: 'IDOR' },
+    { label: 'MD5 Password Hash', path: '/app/weak_hash', icon: Hash, category: 'MEDIUM', vuln: 'Hash' },
     { label: 'System Compliance Logs', path: '/app/lfi', icon: FolderOpen, category: 'MEDIUM', vuln: 'LFI' },
     { label: 'Host Latency Diagnostics', path: '/app/rce', icon: Terminal, category: 'MEDIUM', vuln: 'RCE' },
     { label: 'Cloud Credits Store', path: '/app/logic', icon: ShoppingCart, category: 'MEDIUM', vuln: 'Logic' },
     
-    // Hard Modules
-    { label: 'Audit Report Generator', path: '/app/ssti', icon: FileText, category: 'HARD', vuln: 'SSTI' },
+    // Hard Modules (5)
     { label: 'Webhook Content Fetcher', path: '/app/ssrf', icon: Globe, category: 'HARD', vuln: 'SSRF' },
     { label: 'OAuth Token Inspector', path: '/app/jwt', icon: KeyRound, category: 'HARD', vuln: 'JWT' },
+    { label: 'XXE XML Parser Engine', path: '/app/xxe', icon: Code, category: 'HARD', vuln: 'XXE' },
+    { label: 'Audit Report Generator', path: '/app/ssti', icon: FileText, category: 'HARD', vuln: 'SSTI' },
     { label: 'Microservice State Cache', path: '/app/pickle', icon: Cpu, category: 'HARD', vuln: 'Pickle' }
   ];
 
@@ -52,7 +55,7 @@ export default function Sidebar() {
           <span>SOC Dashboard</span>
         </NavLink>
 
-        <div className="nav-section-label">Enterprise Modules & CTF</div>
+        <div className="nav-section-label">Enterprise Modules (15 Labs)</div>
         {modules.slice(2).map((mod) => {
           const Icon = mod.icon;
           return (

@@ -17,6 +17,9 @@ import LogicPage from './pages/LogicPage';
 import PicklePage from './pages/PicklePage';
 import CookiePage from './pages/CookiePage';
 import RobotsPage from './pages/RobotsPage';
+import WeakHashPage from './pages/WeakHashPage';
+import XxePage from './pages/XxePage';
+import CommentPage from './pages/CommentPage';
 
 export default function App() {
   return (
@@ -29,6 +32,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/app/sqli" element={<SqliPage />} />
+            <Route path="/app/comment" element={<CommentPage />} />
             <Route path="/app/ssti" element={<SstiPage />} />
             <Route path="/app/idor" element={<IdorPage />} />
             <Route path="/app/lfi" element={<LfiPage />} />
@@ -40,6 +44,8 @@ export default function App() {
             <Route path="/app/pickle" element={<PicklePage />} />
             <Route path="/app/cookie" element={<CookiePage />} />
             <Route path="/app/robots" element={<RobotsPage />} />
+            <Route path="/app/weak_hash" element={<WeakHashPage />} />
+            <Route path="/app/xxe" element={<XxePage />} />
           </Routes>
         </div>
       </div>

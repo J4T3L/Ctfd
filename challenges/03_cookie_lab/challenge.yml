@@ -5,7 +5,7 @@ description: |
   Aplikasi ini mempercayai status peran pengguna yang disimpan di dalam cookie `user_session` berformat Base64.
   Dekode dan manipulasi nilai cookie tersebut untuk menaikkan akses menjadi `role=admin`!
 
-  **Target Link**: [https://target.paradick.my.id/cookie_lab/](https://target.paradick.my.id/cookie_lab/)
+  **Target Link**: [https://target.paradick.my.id/app/cookie](https://target.paradick.my.id/app/cookie)
 
 value: 100
 type: standard

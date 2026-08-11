@@ -5,7 +5,7 @@ description: |
   Mesin pencari dokumen ini merefleksikan kata kunci pencarian secara langsung ke dalam halaman tanpa sanitasi.
   Suntikkan skrip Reflected Cross-Site Scripting (XSS) seperti `<script>alert(1)</script>` untuk memicu eksekusi kode!
 
-  **Target Link**: [https://target.paradick.my.id/xss_reflected/](https://target.paradick.my.id/xss_reflected/)
+  **Target Link**: [https://target.paradick.my.id/app/xss](https://target.paradick.my.id/app/xss)
 
 value: 100
 type: standard

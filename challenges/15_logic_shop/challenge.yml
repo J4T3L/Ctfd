@@ -5,7 +5,7 @@ description: |
   Item flag di toko ini seharga $1000, tetapi saldo akun Anda hanya $100.
   Manfaatkan celah logika bisnis (*Parameter Tampering*) pada formulir kuantitas untuk membeli item flag!
 
-  **Target Link**: [https://target.paradick.my.id/logic_shop/](https://target.paradick.my.id/logic_shop/)
+  **Target Link**: [https://target.paradick.my.id/app/logic](https://target.paradick.my.id/app/logic)
 
 value: 350
 type: standard

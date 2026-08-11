@@ -5,7 +5,7 @@ description: |
   Portal publik DevCompany menyimpan catatan pengembang pada komentar kode sumber HTML.
   Inspeksi kode sumber halaman untuk menemukan rute rahasia administrasi!
 
-  **Target Link**: [https://target.paradick.my.id/hidden_comment/](https://target.paradick.my.id/hidden_comment/)
+  **Target Link**: [https://target.paradick.my.id/app/comment](https://target.paradick.my.id/app/comment)
 
 value: 50
 type: standard
@@ -20,5 +20,5 @@ tags:
   - easy
 
 hints:
-  - content: "💡 Tool Recommended: `curl` / `ffuf` / `nuclei`. Anda dapat menggunakan perintah `curl -s https://target.paradick.my.id/hidden_comment/` atau ffuf directory discovery untuk memindai komentar HTML tersembunyi."
+  - content: "💡 Tool Recommended: `curl` / `ffuf` / `nuclei`. Anda dapat menggunakan perintah `curl -s https://target.paradick.my.id/app/comment` atau ffuf directory discovery untuk memindai komentar HTML tersembunyi."
     cost: 5

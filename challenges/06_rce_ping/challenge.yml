@@ -5,7 +5,7 @@ description: |
   Perangkat utilitas diagnostik jaringan ini mengeksekusi perintah shell ping secara langsung.
   Gunakan karakter pemisah perintah (*Command Injection*) seperti `;` atau `&&` untuk mengeksekusi perintah pembacaan berkas flag!
 
-  **Target Link**: [https://target.paradick.my.id/rce_ping/](https://target.paradick.my.id/rce_ping/)
+  **Target Link**: [https://target.paradick.my.id/app/rce](https://target.paradick.my.id/app/rce)
 
 value: 300
 type: standard

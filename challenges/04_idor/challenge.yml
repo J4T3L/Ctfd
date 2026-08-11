@@ -5,7 +5,7 @@ description: |
   Portal profil pengguna menampilkan informasi berdasarkan parameter URL `user_id`.
   Temukan ID akun administrator yang tersembunyi (IDOR) untuk melihat flag rahasia!
 
-  **Target Link**: [https://target.paradick.my.id/idor/](https://target.paradick.my.id/idor/)
+  **Target Link**: [https://target.paradick.my.id/app/idor](https://target.paradick.my.id/app/idor)
 
 value: 150
 type: standard

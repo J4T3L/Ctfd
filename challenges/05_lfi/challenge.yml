@@ -5,7 +5,7 @@ description: |
   Aplikasi pembaca dokumen ini memuat nama berkas melalui parameter `?page=`.
   Gunakan teknik **Path Traversal / Local File Inclusion (LFI)** untuk membaca berkas rahasia `/flag.txt`!
 
-  **Target Link**: [https://target.paradick.my.id/lfi/](https://target.paradick.my.id/lfi/)
+  **Target Link**: [https://target.paradick.my.id/app/lfi](https://target.paradick.my.id/app/lfi)
 
 value: 250
 type: standard

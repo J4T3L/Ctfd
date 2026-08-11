@@ -5,7 +5,7 @@ description: |
   Aplikasi ini menggunakan JSON Web Token (JWT) pada cookie `jwt_auth`.
   Token ini memiliki kata kunci rahasia yang lemah (`secret123`) atau mengizinkan manipulasi algoritma `none`. Naikkkan peran menjadi `admin`!
 
-  **Target Link**: [https://target.paradick.my.id/jwt_lab/](https://target.paradick.my.id/jwt_lab/)
+  **Target Link**: [https://target.paradick.my.id/app/jwt](https://target.paradick.my.id/app/jwt)
 
 value: 400
 type: standard

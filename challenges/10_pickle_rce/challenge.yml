@@ -5,7 +5,7 @@ description: |
   Aplikasi ini menyimpan sesi objek Python yang terserialisasi menggunakan pustaka `pickle` (Base64) di dalam cookie `pickle_session`.
   Konstruksi payload objek `__reduce__` untuk mengeksekusi *Insecure Deserialization RCE*!
 
-  **Target Link**: [https://target.paradick.my.id/pickle_rce/](https://target.paradick.my.id/pickle_rce/)
+  **Target Link**: [https://target.paradick.my.id/app/pickle](https://target.paradick.my.id/app/pickle)
 
 value: 500
 type: standard

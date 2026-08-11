@@ -5,7 +5,7 @@ description: |
   CyberVault adalah platform generator laporan audit keamanan berbasis template Jinja2.
   Tim pengembang telah memasang WAF untuk mencegah kata kunci berbahaya. Meloloskan diri dari WAF dan baca berkas `/flag.txt`!
 
-  **Target Link**: [https://target.paradick.my.id/ssti/](https://target.paradick.my.id/ssti/)
+  **Target Link**: [https://target.paradick.my.id/app/ssti](https://target.paradick.my.id/app/ssti)
 
 value: 500
 type: standard

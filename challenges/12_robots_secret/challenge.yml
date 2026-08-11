@@ -5,7 +5,7 @@ description: |
   Web crawler mengikuti berkas petunjuk `robots.txt`.
   Periksa berkas `/robots.txt` pada target untuk menemukan direktori tersembunyi yang dilarang diindeks!
 
-  **Target Link**: [https://target.paradick.my.id/robots_secret/](https://target.paradick.my.id/robots_secret/)
+  **Target Link**: [https://target.paradick.my.id/app/robots](https://target.paradick.my.id/app/robots)
 
 value: 50
 type: standard
