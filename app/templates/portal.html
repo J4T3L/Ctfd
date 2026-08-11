@@ -168,7 +168,7 @@
                 <p class="card-desc">Inspeksi komentar HTML kode sumber.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Hidden Comments', 'WEB', 'Browser View Source / curl', 'Buka halaman web lalu tekan Ctrl+U (Inspect Source Code). Cari komentar HTML <!-- Secret Admin Endpoint: ... --> untuk menemukan rute rahasia.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Hidden Comments', 'WEB', 'Browser View Source / curl', 'Buka halaman web lalu tekan Ctrl+U (Inspect Source Code). Cari komentar HTML &lt;!-- Secret Admin Endpoint: ... --&gt; untuk menemukan rute rahasia.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/hidden_comment/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -183,7 +183,7 @@
                 <p class="card-desc">Manipulasi cookie Base64 `user_session`.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Cookie Manager', 'WEB', 'DevTools (F12) / CyberChef', 'Buka DevTools F12 -> Application -> Cookies. Ambil cookie user_session (Base64), ubah role=guest menjadi role=admin (cm9sZT1hZG1pbg==).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Cookie Manager', 'WEB', 'DevTools (F12) / CyberChef', 'Buka DevTools F12 -&gt; Application -&gt; Cookies. Ambil cookie user_session (Base64), ubah role=guest menjadi role=admin (cm9sZT1hZG1pbg==).')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/cookie_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -213,7 +213,7 @@
                 <p class="card-desc">Suntikkan payload Reflected XSS.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Reflected XSS', 'WEB', 'Burp Suite / nuclei', 'Masukkan payload JavaScript <script>alert(1)</script> pada kolom pencarian untuk mengeksekusi reflected XSS script.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Reflected XSS', 'WEB', 'Burp Suite / nuclei', 'Masukkan payload JavaScript &lt;script&gt;alert(1)&lt;/script&gt; pada kolom pencarian untuk mengeksekusi reflected XSS script.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/xss_reflected/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -333,7 +333,7 @@
                 <p class="card-desc">XML External Entity Injection.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('XXE XML Parser', 'WEB', 'Burp Suite / nuclei', 'Kirim payload XML XXE pada request: <!DOCTYPE test [ <!ENTITY xxe SYSTEM &quot;file:///flag.txt&quot;> ]><data>&xxe;</data>.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('XXE XML Parser', 'WEB', 'Burp Suite / nuclei', 'Kirim payload XML XXE pada request: &lt;!DOCTYPE test [ &lt;!ENTITY xxe SYSTEM &quot;file:///flag.txt&quot;&gt; ]&gt;&lt;data&gt;&amp;xxe;&lt;/data&gt;.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/xxe_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -348,7 +348,7 @@
                 <p class="card-desc">SSTI WAF Keyword Bypass.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Jinja2 SSTI Generator', 'WEB', 'tplmap / nuclei', 'Lakukan Server-Side Template Injection pada Jinja2 dengan payload bypass WAF: {{ self.__init__.__globals__.__builtins__.open(\'/flag.txt\').read() }}.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Jinja2 SSTI Generator', 'WEB', 'tplmap / nuclei', 'Lakukan Server-Side Template Injection pada Jinja2 dengan payload bypass WAF: &#123;&#123; self.__init__.__globals__.__builtins__.open(\'/flag.txt\').read() &#125;&#125;.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/ssti/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -398,7 +398,7 @@
                 <p class="card-desc">Hex -> Base32 -> Base64 decoding.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Multi-Layer Encoding', 'CRYPTO', 'CyberChef / Base32', 'Buka file 17_nested_encoding.txt. Gunakan CyberChef dengan urutan resep: From Hex -> From Base32 -> From Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Multi-Layer Encoding', 'CRYPTO', 'CyberChef / Base32', 'Buka file 17_nested_encoding.txt. Gunakan CyberChef dengan urutan resep: From Hex -&gt; From Base32 -&gt; From Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/17_nested_encoding.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -413,7 +413,7 @@
                 <p class="card-desc">Cracking MD5 password hash.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Legacy MD5 Hash Crack', 'CRYPTO', 'hashcat / john / CrackStation', 'Salin hash MD5 e10adc3949ba59abbe56e057f20f883e. Gunakan hashcat -m 0 e10adc3949ba59abbe56e057f20f883e rockyou.txt untuk mendapatkan password.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Legacy MD5 Hash Crack', 'CRYPTO', 'hashcat / john / CrackStation', 'Salin hash MD5 e10adc3949ba59abbe56e057f20f883e. Gunakan hashcat -m 0 e10adc3949ba59abbe56e057f20f883e rockyou.txt untuk mendapatkan password password123. Flag: CTF{password123}.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/weak_hash/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
@@ -428,7 +428,7 @@
                 <p class="card-desc">RSA Low Exponent m = c^(1/3).</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('RSA Small Exponent e=3', 'CRYPTO', 'Python 3 / SymPy', 'Buka file 19_rsa_e3.json. Karena e=3 sangat kecil (c < n), hitung nilai m dengan menghitung akar pangkat tiga dari ciphertext: m = c**(1/3).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('RSA Small Exponent e=3', 'CRYPTO', 'Python 3 / SymPy', 'Buka file 19_rsa_e3.json. Karena e=3 sangat kecil (c &lt; n), hitung nilai m dengan menghitung akar pangkat tiga dari ciphertext: m = c**(1/3) = 17. Flag: CTF{17}.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/19_rsa_e3.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -443,7 +443,7 @@
                 <p class="card-desc">RSA Factorization (p * q).</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('RSA Prime Factorization', 'CRYPTO', 'factordb.com / SageMath', 'Buka file 20_rsa_factor.json. Masukkan nilai n=493 ke factordb.com untuk menemukan p=17 dan q=29, lalu dekripsi ciphertext c.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('RSA Prime Factorization', 'CRYPTO', 'factordb.com / SageMath', 'Buka file 20_rsa_factor.json. Masukkan nilai n=493 ke factordb.com untuk menemukan p=17 dan q=29, phi=448, d=257, m=pow(312, 257, 493) = 448. Flag: CTF{448}.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/20_rsa_factor.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -458,7 +458,7 @@
                 <p class="card-desc">XOR Stream Cipher Brute-Force.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Single-Byte XOR Stream', 'CRYPTO', 'CyberChef / xortool', 'Buka file 21_xor_stream.txt. Masukkan hex ciphertext ke CyberChef -> pilih operasi XOR Brute Force (kunci 1-byte 0x42).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Single-Byte XOR Stream', 'CRYPTO', 'CyberChef / xortool', 'Buka file 21_xor_stream.txt. Masukkan hex ciphertext ke CyberChef -&gt; pilih operasi XOR Brute Force (kunci 1-byte 0x42).')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/21_xor_stream.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -484,11 +484,11 @@
                     <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</span>
                     <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
                 </div>
-                <h3 class="card-title" style="margin-top: 0.4rem;">AES-128 ECB Pattern</h3>
+                <h3 class="card-title" style="margin-top: 0.4rem;">AES-128 ECB Mode Pattern Leak</h3>
                 <p class="card-desc">AES ECB Block Alignment Leak.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('AES-128 ECB Pattern', 'CRYPTO', 'Python 3 / CyberChef', 'Buka file 23_aes_ecb.hex. Analisis blok hex 16-byte identik pada ECB mode yang mengindikasikan struktur data plaintext.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('AES-128 ECB Mode Pattern Leak', 'CRYPTO', 'Python 3 / CyberChef', 'Buka file 23_aes_ecb.hex. Analisis blok hex 16-byte identik pada ECB mode yang mengindikasikan struktur data plaintext.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/23_aes_ecb.hex" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -518,7 +518,7 @@
                 <p class="card-desc">Diffie-Hellman Discrete Logarithm.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Diffie-Hellman Weak Mod', 'CRYPTO', 'SageMath / Pari-GP', 'Buka file 25_dh_params.json. Hitung Discrete Logarithm Problem g^a = A (mod p) pada p=23 yang sangat kecil menggunakan SageMath.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Diffie-Hellman Weak Mod', 'CRYPTO', 'SageMath / Pari-GP', 'Buka file 25_dh_params.json. Hitung Discrete Logarithm Problem g^a = A (mod p) pada p=23 yang sangat kecil menggunakan SageMath (a=6, s=12). Flag: CTF{12}.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/25_dh_params.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -628,7 +628,7 @@
                 <p class="card-desc">ZIP2John password cracking.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('Encrypted ZIP Crack', 'FORENSICS', 'zip2john & john', 'Unduh file 32_encrypted_secret.zip. Ekstrak hash dengan zip2john 32_encrypted_secret.zip > hash.txt lalu crack dengan john --wordlist=rockyou.txt hash.txt.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('Encrypted ZIP Crack', 'FORENSICS', 'zip2john & john', 'Unduh file 32_encrypted_secret.zip. Ekstrak hash dengan zip2john 32_encrypted_secret.zip &gt; hash.txt lalu crack dengan john --wordlist=rockyou.txt hash.txt.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/32_encrypted_secret.zip" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -693,7 +693,7 @@
                 <p class="card-desc">Wireshark PCAP POST inspection.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('HTTP Cleartext Packet', 'NETWORK', 'Wireshark / tshark', 'Buka file 36_http_login.pcap.txt. Filter Wireshark dengan http.request.method == &quot;POST&quot;, lalu klik kanan -> Follow TCP Stream.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('HTTP Cleartext Packet', 'NETWORK', 'Wireshark / tshark', 'Buka file 36_http_login.pcap.txt. Filter Wireshark dengan http.request.method == &quot;POST&quot;, lalu klik kanan -&gt; Follow TCP Stream.')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/36_http_login.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
@@ -753,7 +753,7 @@
                 <p class="card-desc">Wireshark SSLKEYLOGFILE Import.</p>
 
                 <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <button onclick="openHintModal('SSL/TLS Keylog Decrypt', 'NETWORK', 'Wireshark TLS Preferences', 'Buka file 40_tls_keylog.pcap.txt. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -> Protocols -> TLS -> (Pre)-Master-Secret log filename).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                    <button onclick="openHintModal('SSL/TLS Keylog Decrypt', 'NETWORK', 'Wireshark TLS Preferences', 'Buka file 40_tls_keylog.pcap.txt. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -&gt; Protocols -&gt; TLS -&gt; (Pre)-Master-Secret log filename).')" class="btn-hint" style="width: 100%; justify-content: center;">
                         💡 Hint & Recommended Tools
                     </button>
                     <a href="/handout/40_tls_keylog.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>

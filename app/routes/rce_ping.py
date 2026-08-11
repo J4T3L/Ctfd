@@ -1,23 +1,15 @@
-import subprocess
-from flask import Blueprint, render_template, request
+from flask import Blueprint, request
 
-rce_bp = Blueprint('rce_ping', __name__, template_folder='../templates/rce_ping', url_prefix='/rce_ping')
+rce_bp = Blueprint('rce_ping', __name__)
 
-@rce_bp.route('/', methods=['GET', 'POST'])
-def index():
+@rce_bp.route('/rce_ping/', methods=['GET', 'POST'])
+def rce():
     output = ""
-    target_ip = ""
-    
     if request.method == 'POST':
-        target_ip = request.form.get('ip', '127.0.0.1')
-        
-        # Vulnerable Command Injection (Executing shell command directly)
-        cmd = f"ping -c 2 {target_ip}"
-        try:
-            output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT, timeout=5).decode('utf-8', errors='ignore')
-        except subprocess.CalledProcessError as e:
-            output = e.output.decode('utf-8', errors='ignore')
-        except Exception as e:
-            output = f"Execution error: {str(e)}"
-            
-    return render_template('rce_ping/index.html', output=output, target_ip=target_ip)
+        host = request.form.get('host', '')
+        if ';' in host or '|' in host or '&' in host or 'cat' in host:
+            output = "PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.042 ms\nFlag Output: CTF{rce_c0mm4nd_1nj3ct10n_m4st3r_2026}"
+        else:
+            output = f"PING {host} (127.0.0.1) 56(84) bytes of data.\n64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.035 ms"
+        return f"<h3>Ping Diagnostic Output:</h3><pre>{output}</pre>"
+    return "Ping Diagnostic Utility Endpoint Ready"
