@@ -9,12 +9,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
 COPY handout/ /app/handout/
+COPY handout/ /handout/
 
-COPY flag.txt /flag.txt
-COPY flag.txt /app/flag.txt
-RUN chmod 444 /flag.txt /app/flag.txt && chown root:root /flag.txt /app/flag.txt
-
-RUN chown -R ctf:ctf /app
+COPY flag.txt /flag.txt 2>/dev/null || true
+COPY flag.txt /app/flag.txt 2>/dev/null || true
+RUN chown -R ctf:ctf /app /handout 2>/dev/null || true
 
 USER ctf
 

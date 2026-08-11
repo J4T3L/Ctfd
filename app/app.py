@@ -17,9 +17,11 @@ from routes.weak_hash import hash_bp
 from routes.xxe_lab import xxe_bp
 from routes.logic_shop import logic_bp
 
-HANDOUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../handout'))
+# Determine Handout Directory robustly
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+HANDOUT_DIR = os.path.join(BASE_DIR, 'handout')
 if not os.path.exists(HANDOUT_DIR):
-    HANDOUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'handout'))
+    HANDOUT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'handout'))
 
 app = Flask(__name__)
 app.secret_key = "ctf_web_50_challenge_master_key_2026"
@@ -47,6 +49,11 @@ def portal():
 
 @app.route('/handout/<path:filename>')
 def serve_handout(filename):
+    if not os.path.exists(os.path.join(HANDOUT_DIR, filename)):
+        # Fallback search if file exists in parent handout
+        parent_handout = os.path.abspath(os.path.join(BASE_DIR, '..', 'handout'))
+        if os.path.exists(os.path.join(parent_handout, filename)):
+            return send_from_directory(parent_handout, filename, as_attachment=True)
     return send_from_directory(HANDOUT_DIR, filename, as_attachment=True)
 
 if __name__ == '__main__':
