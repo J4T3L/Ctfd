@@ -1,0 +1,23 @@
+name: "Business Logic Shop"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/logic](https://target.paradick.my.id/app/logic)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{l0g1c_fl4w_pr1c3_m4n1pul4710n_2026}"
+
+tags:
+  - web-exploitation
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite Repeater`. Masukkan nilai kuantitas negatif (misal `-10`)."
+    cost: 35

@@ -1,0 +1,23 @@
+name: "C ELF Binary Key Verification"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{c_3lf_cr4ckm3_gdb_2026}"
+
+tags:
+  - reverse-engineering
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Ghidra` / `gdb`. Disassemble fungsi `main` & `strcmp` pada biner."
+    cost: 30

@@ -1,0 +1,23 @@
+name: "Java Class Decompilation"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 200
+type: standard
+state: visible
+
+flags:
+  - "CTF{j4v4_d3c0mp1l3r_j4dx_2026}"
+
+tags:
+  - reverse-engineering
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `jadx-gui` / `cfr`. Dekompilasi bytecode `.class` Java."
+    cost: 20

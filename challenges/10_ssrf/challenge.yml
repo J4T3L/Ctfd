@@ -1,0 +1,23 @@
+name: "URL Content Fetcher"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/ssrf](https://target.paradick.my.id/app/ssrf)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{ssrf_1n73rn4l_n37w0rk_4cc3ss_2026}"
+
+tags:
+  - web-exploitation
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `nuclei`. Tembak URL internal loopback `http://127.0.0.1:8000/ssrf/internal/admin/secret`."
+    cost: 35

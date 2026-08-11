@@ -1,0 +1,23 @@
+name: "IoT MQTT Broker Packet Sniffing"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{mq77_107_br0k3r_sn1ff3d_2026}"
+
+tags:
+  - network-sniffing
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark` / `mosquitto_sub`. Inspect MQTT Publish Message packets."
+    cost: 30

@@ -1,0 +1,23 @@
+name: "Android APK Smali Logic"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{4ndr01d_4pk_sm4l1_r3v3rs3_2026}"
+
+tags:
+  - reverse-engineering
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `jadx-gui` / `apktool`. Decompile APK dan periksa kelas MainActivity."
+    cost: 35

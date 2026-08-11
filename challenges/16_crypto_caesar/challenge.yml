@@ -1,0 +1,23 @@
+name: "Caesar Cipher ROT13"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 50
+type: standard
+state: visible
+
+flags:
+  - "CTF{c43s4r_c1ph3r_r0t13_m4sg3r_2026}"
+
+tags:
+  - cryptography
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `CyberChef` / `tr`. Dekripsi cipher ROT13 pada ciphertext."
+    cost: 5

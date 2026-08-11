@@ -1,0 +1,23 @@
+name: "Encrypted ZIP Hash Cracking"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 200
+type: standard
+state: visible
+
+flags:
+  - "CTF{z1p_p4ssw0rd_cr4ck3d_2026}"
+
+tags:
+  - digital-forensics
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `zip2john` & `john`. Ekstrak hash dari ZIP terenkripsi lalu crack dengan wordlist."
+    cost: 20

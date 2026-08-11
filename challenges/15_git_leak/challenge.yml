@@ -1,0 +1,23 @@
+name: "Exposed .git Directory Leak"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/git](https://target.paradick.my.id/app/git)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{g17_d1r3c70ry_3xp0s3d_2026}"
+
+tags:
+  - web-exploitation
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `GitTools` / `git-dumper`. Unduh folder `.git` yang terekspos publik."
+    cost: 15

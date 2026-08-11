@@ -1,0 +1,23 @@
+name: "Single-Byte XOR Stream Cipher"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 250
+type: standard
+state: visible
+
+flags:
+  - "CTF{x0r_s7r34m_c1ph3r_cr4ck3d_2026}"
+
+tags:
+  - cryptography
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `CyberChef` / `xortool`. Brute-force 256 kemungkinan single-byte XOR key."
+    cost: 25

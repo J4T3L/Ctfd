@@ -1,0 +1,23 @@
+name: "Browser History SQLite Analysis"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 250
+type: standard
+state: visible
+
+flags:
+  - "CTF{br0ws3r_h1s70ry_sql173_2026}"
+
+tags:
+  - digital-forensics
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `sqlite3` / `DB Browser`. Query tabel `urls` pada SQLite History browser."
+    cost: 25

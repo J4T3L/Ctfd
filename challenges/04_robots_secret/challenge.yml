@@ -1,23 +1,23 @@
-name: "DevCompany - Hidden Comments"
+name: "Robots.txt Recon"
 author: "Modul Ajar Jarkom & Cyber Security"
 category: "Web Exploitation"
 description: |
   Tantangan Web Exploitation (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/comment](https://target.paradick.my.id/app/comment)
+  **Target Link / Handout**: [https://target.paradick.my.id/app/robots](https://target.paradick.my.id/app/robots)
 
 value: 50
 type: standard
 state: visible
 
 flags:
-  - "CTF{h7ml_c0mm3n7_l34k_d1sc0v3r3d_2026}"
+  - "CTF{r0b07s_7x7_d1sc0v3ry_m4s73r_2026}"
 
 tags:
   - web-exploitation
   - easy
 
 hints:
-  - content: "💡 Tool Recommended: `curl` / `ffuf`. Inspeksi komentar HTML kode sumber halaman."
+  - content: "💡 Tool Recommended: `curl` / `nikto`. Periksa berkas `/robots.txt`."
     cost: 5

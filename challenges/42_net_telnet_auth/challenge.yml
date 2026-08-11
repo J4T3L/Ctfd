@@ -1,0 +1,23 @@
+name: "Unencrypted Telnet Credentials"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 100
+type: standard
+state: visible
+
+flags:
+  - "CTF{73ln37_c134r73x7_l0g1n_2026}"
+
+tags:
+  - network-sniffing
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark`. Follow TCP Stream pada port 23 Telnet."
+    cost: 10

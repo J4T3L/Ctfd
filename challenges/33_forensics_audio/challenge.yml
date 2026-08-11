@@ -1,0 +1,23 @@
+name: "Audio Spectrogram Hidden Signal"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{4ud10_sp3c7r0gr4m_s73g0_2026}"
+
+tags:
+  - digital-forensics
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Audacity` / `sonic-visualiser`. Buka tampilan Spectrogram pada berkas audio WAV."
+    cost: 35

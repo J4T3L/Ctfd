@@ -1,0 +1,23 @@
+name: "DNS Tunneling Exfiltration"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{dns_7unn3l_3xf1l7r4710n_2026}"
+
+tags:
+  - network-sniffing
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `tshark` / `python3`. Dekode subdomain query DNS A/TXT berformat Base64."
+    cost: 30

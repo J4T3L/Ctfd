@@ -1,0 +1,23 @@
+name: "Python Bytecode Decompilation"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{py7h0n_by73c0d3_d3c0mp1l3d_2026}"
+
+tags:
+  - reverse-engineering
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `uncompyle6` / `decompyle++`. Dekompilasi berkas `.pyc` kembali ke kode sumber Python."
+    cost: 15

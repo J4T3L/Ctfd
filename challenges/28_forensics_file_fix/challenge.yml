@@ -1,0 +1,23 @@
+name: "Corrupted Image Header Repair"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 200
+type: standard
+state: visible
+
+flags:
+  - "CTF{f1l3_h34d3r_m4g1c_by73s_f1x_2026}"
+
+tags:
+  - digital-forensics
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `hexeditor` / `xxd`. Perbaiki 8 byte pertama magic bytes header PNG (`89 50 4E 47`)."
+    cost: 20

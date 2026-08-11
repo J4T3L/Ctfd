@@ -1,0 +1,6 @@
+{
+  "n": 172901,
+  "e": 3,
+  "c": 4913,
+  "note": "c = m^e mod n. Calculate c^(1/e)."
+}

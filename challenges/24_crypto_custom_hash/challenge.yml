@@ -1,0 +1,23 @@
+name: "Insecure Custom Hash Collision"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 450
+type: standard
+state: visible
+
+flags:
+  - "CTF{cush0m_h4sh_c0ll1s10n_2026}"
+
+tags:
+  - cryptography
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `z3-solver` / `python3`. Temukan string lain yang menghasilkan hash collision."
+    cost: 45

@@ -1,0 +1,23 @@
+name: "UserProfile Portal"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/idor](https://target.paradick.my.id/app/idor)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{1d0r_pr1v1l3g3_3sc4l4710n_2026}"
+
+tags:
+  - web-exploitation
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `ffuf` / `Burp Intruder`. Ubah parameter `user_id=100` untuk membuka profil admin."
+    cost: 15

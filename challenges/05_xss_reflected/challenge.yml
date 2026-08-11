@@ -1,0 +1,23 @@
+name: "Reflected XSS Engine"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/xss](https://target.paradick.my.id/app/xss)
+
+value: 100
+type: standard
+state: visible
+
+flags:
+  - "CTF{xss_r3fl3c73d_s3cr37_l34k_2026}"
+
+tags:
+  - web-exploitation
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `Burp Suite` / `nuclei`. Suntikkan payload `<script>alert(1)</script>` pada parameter pencarian."
+    cost: 10

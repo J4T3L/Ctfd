@@ -1,0 +1,23 @@
+name: "AES-128 ECB Mode Pattern Leak"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 400
+type: standard
+state: visible
+
+flags:
+  - "CTF{43s_3cb_p4773rn_l34k_2026}"
+
+tags:
+  - cryptography
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `python3`. Manfaatkan sifat independen blok AES ECB mode untuk ekstrasi flag."
+    cost: 40

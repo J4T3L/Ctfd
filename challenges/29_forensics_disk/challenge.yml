@@ -1,0 +1,23 @@
+name: "Deleted File Partition Carving"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{d1sk_c4rv1ng_f0r3ns1cs_2026}"
+
+tags:
+  - digital-forensics
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `autopsy` / `foremost` / `scalpel`. Carving berkas terhapus dari disk image."
+    cost: 30

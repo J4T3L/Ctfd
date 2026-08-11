@@ -1,0 +1,23 @@
+name: "Vigenère Cipher Frequency Analysis"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{v1g3n3r3_c1ph3r_4n4lys1s_2026}"
+
+tags:
+  - cryptography
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `dcode.fr` / `vigenere-solver`. Analisis frekuensi huruf untuk mencari panjang kunci."
+    cost: 30

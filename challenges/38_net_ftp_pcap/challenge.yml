@@ -1,0 +1,23 @@
+name: "Anonymous FTP Data Extraction"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{f7p_p4ss1v3_d474_7r4nsf3r_2026}"
+
+tags:
+  - network-sniffing
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark`. Follow TCP Stream pada port FTP-DATA (port 20/passive)."
+    cost: 15

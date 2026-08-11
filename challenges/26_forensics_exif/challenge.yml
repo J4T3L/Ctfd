@@ -1,0 +1,23 @@
+name: "Image EXIF Metadata Extraction"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 50
+type: standard
+state: visible
+
+flags:
+  - "CTF{3x1f_m374d474_3x7r4c710n_2026}"
+
+tags:
+  - digital-forensics
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `exiftool` / `strings`. Ekstrak tag Exif/Comment pada gambar."
+    cost: 5

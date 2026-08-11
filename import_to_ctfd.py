@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Direct CTFd REST API Importer (Pure Python Stdlib - Zero Dependencies)
-Automatically detects CTFd URL/IP and imports all 15 challenges via REST API.
+Automatically detects CTFd URL/IP and imports all 50 Multi-Category challenges via REST API.
 """
 import os
 import sys
@@ -86,31 +86,16 @@ def import_challenges():
     except Exception:
         existing_names = {}
 
-    challenge_dirs = [
-        "challenges/01_sqli",
-        "challenges/02_comment_leak",
-        "challenges/03_cookie_lab",
-        "challenges/04_idor",
-        "challenges/05_lfi",
-        "challenges/06_rce_ping",
-        "challenges/07_ssrf",
-        "challenges/08_jwt_lab",
-        "challenges/09_ssti",
-        "challenges/10_pickle_rce",
-        "challenges/11_xss_reflected",
-        "challenges/12_robots_secret",
-        "challenges/13_weak_hash",
-        "challenges/14_xxe_lab",
-        "challenges/15_logic_shop",
-    ]
+    c_base = os.path.abspath(os.path.join(os.path.dirname(__file__), "challenges"))
+    challenge_dirs = sorted([
+        os.path.join("challenges", d) for d in os.listdir(c_base)
+        if os.path.isdir(os.path.join(c_base, d)) and os.path.exists(os.path.join(c_base, d, "challenge.yml"))
+    ])
 
-    print("\n[*] Importing all 15 challenges into CTFd via REST API...")
+    print(f"\n[*] Importing all {len(challenge_dirs)} Multi-Category challenges into CTFd via REST API...")
 
     for cdir in challenge_dirs:
         yml_path = os.path.join(cdir, "challenge.yml")
-        if not os.path.exists(yml_path):
-            continue
-
         cdata = parse_simple_yml(yml_path)
         name = cdata.get("name")
         if not name:
@@ -159,7 +144,7 @@ def import_challenges():
             except Exception:
                 pass
 
-    print("\n[🎉] All 15 challenges imported successfully into CTFd!")
+    print(f"\n[🎉] All {len(challenge_dirs)} Multi-Category challenges imported successfully into CTFd!")
 
 if __name__ == "__main__":
     import_challenges()

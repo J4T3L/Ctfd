@@ -1,0 +1,23 @@
+name: "Legacy MD5 Password Hash"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/weak_hash](https://target.paradick.my.id/app/weak_hash)
+
+value: 200
+type: standard
+state: visible
+
+flags:
+  - "CTF{md5_w34k_h4sh_cr4ck3d_2026}"
+
+tags:
+  - cryptography
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `hashcat` / `john`. Pecahkan hash MD5 `e10adc3949ba59abbe56e057f20f883e`."
+    cost: 20

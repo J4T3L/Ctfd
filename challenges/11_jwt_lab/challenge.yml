@@ -1,0 +1,23 @@
+name: "JWT Inspector"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Web Exploitation"
+description: |
+  Tantangan Web Exploitation (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/jwt](https://target.paradick.my.id/app/jwt)
+
+value: 400
+type: standard
+state: visible
+
+flags:
+  - "CTF{jw7_w34k_s3cr37_3sc4l4710n_2026}"
+
+tags:
+  - web-exploitation
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `jwt_tool` / `hashcat`. Crack token JWT dengan secret `secret123` atau uji `alg: none`."
+    cost: 40

@@ -1,0 +1,23 @@
+name: "SSL/TLS Decryption Keylog"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 400
+type: standard
+state: visible
+
+flags:
+  - "CTF{7ls_d3cryp710n_k3yl0gf1l3_2026}"
+
+tags:
+  - network-sniffing
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark`. Impor berkas `SSLKEYLOGFILE` pada Wireshark TLS Preferences."
+    cost: 40

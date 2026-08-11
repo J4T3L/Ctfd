@@ -1,0 +1,23 @@
+name: "RSA Small Exponent Attack"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 300
+type: standard
+state: visible
+
+flags:
+  - "CTF{rs4_sm4ll_3xp0n3n7_2026}"
+
+tags:
+  - cryptography
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `python3`. Hitung akar pangkat 3 dari ciphertext $m = c^{1/3}$ saat $e=3$."
+    cost: 30

@@ -1,0 +1,23 @@
+name: "x86 Buffer Overflow ret2win"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 450
+type: standard
+state: visible
+
+flags:
+  - "CTF{b0f_r372w1n_st4ck_0v3rwr173_2026}"
+
+tags:
+  - reverse-engineering
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `pwntools` & `gdb-pwndbg`. Overwrite EIP/RIP untuk melompat ke fungsi `win()`."
+    cost: 45

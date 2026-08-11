@@ -1,11 +1,11 @@
 name: "Cookie Session Manager"
-author: "Modul Ajar Jarkom"
+author: "Modul Ajar Jarkom & Cyber Security"
 category: "Web Exploitation"
 description: |
-  Aplikasi ini mempercayai status peran pengguna yang disimpan di dalam cookie `user_session` berformat Base64.
-  Dekode dan manipulasi nilai cookie tersebut untuk menaikkan akses menjadi `role=admin`!
+  Tantangan Web Exploitation (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link**: [https://target.paradick.my.id/app/cookie](https://target.paradick.my.id/app/cookie)
+  **Target Link / Handout**: [https://target.paradick.my.id/app/cookie](https://target.paradick.my.id/app/cookie)
 
 value: 100
 type: standard
@@ -15,10 +15,9 @@ flags:
   - "CTF{c00k13_m4n1pul4710n_m4s73r_2026}"
 
 tags:
-  - web
-  - cookie
+  - web-exploitation
   - easy
 
 hints:
-  - content: "💡 Tool Recommended: `Burp Suite` / `Developer Tools` / `base64`. Tangkap request dengan Burp Suite Repeater atau DevTools, dekode cookie `user_session` dengan `echo '<val>' | base64 -d`, lalu ubah menjadi Base64 dari `role=admin` (`cm9sZT1hZG1pbg==`)."
+  - content: "💡 Tool Recommended: `Burp Suite` / `DevTools`. Dekode cookie Base64 `user_session` lalu ubah menjadi `role=admin`."
     cost: 10

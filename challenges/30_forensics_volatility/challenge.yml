@@ -1,0 +1,23 @@
+name: "Memory Dump Volatility Analysis"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 450
+type: standard
+state: visible
+
+flags:
+  - "CTF{v0l471l17y_m3m0ry_f0r3ns1cs_2026}"
+
+tags:
+  - digital-forensics
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `volatility3`. Analisis daftar proses (`pslist`) dan dumped memory process."
+    cost: 45

@@ -1,0 +1,23 @@
+name: "ARP Cache Poisoning Analysis"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 250
+type: standard
+state: visible
+
+flags:
+  - "CTF{4rp_sp00f1ng_m17m_2026}"
+
+tags:
+  - network-sniffing
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark`. Cari peringatan Duplicate IP / MAC address re-binding."
+    cost: 25

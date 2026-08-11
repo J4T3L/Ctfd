@@ -1,0 +1,23 @@
+name: "RSA Prime Factorization Attack"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{rs4_f4c70r1z4710n_f4ct0rdb_2026}"
+
+tags:
+  - cryptography
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `factordb.py` / `sage`. Faktorkan nilai $n$ kecil untuk mendapatkan nilai $p$ dan $q$."
+    cost: 35

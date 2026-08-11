@@ -1,0 +1,23 @@
+name: "HTTP Cleartext Packet Inspection"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 100
+type: standard
+state: visible
+
+flags:
+  - "CTF{c134r73x7_p4ck37_sn1ff3d_2026}"
+
+tags:
+  - network-sniffing
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `Wireshark` / `tshark`. Filter paket `http.request.method == "POST"`."
+    cost: 10

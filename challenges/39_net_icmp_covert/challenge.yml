@@ -1,0 +1,23 @@
+name: "ICMP Echo Covert Channel"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Network Sniffing"
+description: |
+  Tantangan Network Sniffing (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 350
+type: standard
+state: visible
+
+flags:
+  - "CTF{1cmp_c0v3r7_ch4nn3l_2026}"
+
+tags:
+  - network-sniffing
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `tshark`. Ekstrak byte data payload pada paket ICMP ping request."
+    cost: 35

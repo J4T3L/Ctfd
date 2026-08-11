@@ -1,0 +1,23 @@
+name: "Multi-Layer Nested Encoding"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 100
+type: standard
+state: visible
+
+flags:
+  - "CTF{mul71_l4y3r_3nc0d1ng_m4s73r_2026}"
+
+tags:
+  - cryptography
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `CyberChef` / `base32`. Dekode urutan Hex -> Base32 -> Base64."
+    cost: 10

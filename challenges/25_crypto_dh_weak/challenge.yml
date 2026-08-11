@@ -1,0 +1,23 @@
+name: "Diffie-Hellman Weak Modulus Attack"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Cryptography"
+description: |
+  Tantangan Cryptography (HARD).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 500
+type: standard
+state: visible
+
+flags:
+  - "CTF{d1ff13_h3llm4n_w34k_p_2026}"
+
+tags:
+  - cryptography
+  - hard
+
+hints:
+  - content: "💡 Tool Recommended: `pari/gp` / `sage`. Hitung logaritma diskrit (Discrete Log Problem) pada p kecil."
+    cost: 50

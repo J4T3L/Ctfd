@@ -1,0 +1,23 @@
+name: "PNG Image LSB Steganography"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Digital Forensics"
+description: |
+  Tantangan Digital Forensics (MEDIUM).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 150
+type: standard
+state: visible
+
+flags:
+  - "CTF{lsb_st3g4n0gr4phy_3x7r4c73d_2026}"
+
+tags:
+  - digital-forensics
+  - medium
+
+hints:
+  - content: "💡 Tool Recommended: `zsteg` / `stegsolve`. Ekstrak bit terendah (LSB) pada bitplane gambar PNG."
+    cost: 15

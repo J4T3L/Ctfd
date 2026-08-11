@@ -1,0 +1,23 @@
+name: "ELF Compiled Strings Inspection"
+author: "Modul Ajar Jarkom & Cyber Security"
+category: "Reverse Engineering"
+description: |
+  Tantangan Reverse Engineering (EASY).
+  Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
+
+  **Target Link / Handout**: [https://target.paradick.my.id/app/tools](https://target.paradick.my.id/app/tools)
+
+value: 50
+type: standard
+state: visible
+
+flags:
+  - "CTF{r3v3rs3_3ng1n33r1ng_m4s73r_2026}"
+
+tags:
+  - reverse-engineering
+  - easy
+
+hints:
+  - content: "💡 Tool Recommended: `strings` / `ghidra`. Ekstrak string tercetak pada biner ELF."
+    cost: 5
