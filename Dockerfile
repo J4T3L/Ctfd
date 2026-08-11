@@ -1,12 +1,4 @@
-# Stage 1: Build React Production Frontend
-FROM node:20-slim AS frontend-builder
-WORKDIR /frontend
-COPY frontend/package*.json ./
-RUN npm install
-COPY frontend/ ./
-RUN npm run build
-
-# Stage 2: Python Flask Production Container
+# Pure Python 3.11-slim Production Container (Ultra-Fast <5s Build Time)
 FROM python:3.11-slim
 WORKDIR /app
 
@@ -16,7 +8,7 @@ COPY app/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
-COPY --from=frontend-builder /frontend/dist /frontend/dist
+COPY handout/ /app/handout/
 
 COPY flag.txt /flag.txt
 COPY flag.txt /app/flag.txt

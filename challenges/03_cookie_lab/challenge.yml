@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/cookie](https://target.paradick.my.id/app/cookie)
+  **Target Link / Handout**: [https://target.paradick.my.id/cookie_lab/](https://target.paradick.my.id/cookie_lab/)
 
 value: 100
 type: standard

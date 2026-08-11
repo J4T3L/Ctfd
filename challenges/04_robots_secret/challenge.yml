@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/robots](https://target.paradick.my.id/app/robots)
+  **Target Link / Handout**: [https://target.paradick.my.id/robots_secret/](https://target.paradick.my.id/robots_secret/)
 
 value: 50
 type: standard

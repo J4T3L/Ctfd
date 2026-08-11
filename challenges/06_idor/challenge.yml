@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/idor](https://target.paradick.my.id/app/idor)
+  **Target Link / Handout**: [https://target.paradick.my.id/idor/](https://target.paradick.my.id/idor/)
 
 value: 150
 type: standard

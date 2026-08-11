@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (MEDIUM).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/lfi](https://target.paradick.my.id/app/lfi)
+  **Target Link / Handout**: [https://target.paradick.my.id/lfi/](https://target.paradick.my.id/lfi/)
 
 value: 250
 type: standard

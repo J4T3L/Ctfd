@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/sqli](https://target.paradick.my.id/app/sqli)
+  **Target Link / Handout**: [https://target.paradick.my.id/sqli/](https://target.paradick.my.id/sqli/)
 
 value: 100
 type: standard

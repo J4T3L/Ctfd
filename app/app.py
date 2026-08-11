@@ -1,5 +1,5 @@
 import os
-from flask import Flask, send_from_directory, render_template, request
+from flask import Flask, render_template, send_from_directory
 
 from routes.ssti import ssti_bp
 from routes.sqli import sqli_bp, init_sqli_db
@@ -17,12 +17,14 @@ from routes.weak_hash import hash_bp
 from routes.xxe_lab import xxe_bp
 from routes.logic_shop import logic_bp
 
-DIST_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../frontend/dist'))
+HANDOUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../handout'))
+if not os.path.exists(HANDOUT_DIR):
+    HANDOUT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), 'handout'))
 
-app = Flask(__name__, static_folder=os.path.join(DIST_DIR, 'assets'), static_url_path='/assets')
-app.secret_key = "ctf_web_15_challenge_master_key_2026"
+app = Flask(__name__)
+app.secret_key = "ctf_web_50_challenge_master_key_2026"
 
-# Register all 15 CTF Blueprints
+# Register all CTF Blueprints
 app.register_blueprint(sqli_bp)
 app.register_blueprint(comment_bp)
 app.register_blueprint(cookie_bp)
@@ -39,15 +41,13 @@ app.register_blueprint(hash_bp)
 app.register_blueprint(xxe_bp)
 app.register_blueprint(logic_bp)
 
-# Catch-all route to serve React Single Page Application
 @app.route('/')
-@app.route('/dashboard')
-@app.route('/app/<path:path>')
-def serve_react(path=''):
-    if os.path.exists(DIST_DIR):
-        return send_from_directory(DIST_DIR, 'index.html')
-    else:
-        return render_template('portal.html')
+def portal():
+    return render_template('portal.html')
+
+@app.route('/handout/<path:filename>')
+def serve_handout(filename):
+    return send_from_directory(HANDOUT_DIR, filename, as_attachment=True)
 
 if __name__ == '__main__':
     init_sqli_db()

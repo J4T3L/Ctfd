@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (HARD).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/ssti](https://target.paradick.my.id/app/ssti)
+  **Target Link / Handout**: [https://target.paradick.my.id/ssti/](https://target.paradick.my.id/ssti/)
 
 value: 500
 type: standard

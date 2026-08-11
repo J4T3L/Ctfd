@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (EASY).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/xss](https://target.paradick.my.id/app/xss)
+  **Target Link / Handout**: [https://target.paradick.my.id/xss_reflected/](https://target.paradick.my.id/xss_reflected/)
 
 value: 100
 type: standard

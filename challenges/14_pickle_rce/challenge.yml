@@ -5,7 +5,7 @@ description: |
   Tantangan Web Exploitation (HARD).
   Analisis dan selesaikan tantangan ini untuk menemukan flag rahasia!
 
-  **Target Link / Handout**: [https://target.paradick.my.id/app/pickle](https://target.paradick.my.id/app/pickle)
+  **Target Link / Handout**: [https://target.paradick.my.id/pickle_rce/](https://target.paradick.my.id/pickle_rce/)
 
 value: 500
 type: standard
