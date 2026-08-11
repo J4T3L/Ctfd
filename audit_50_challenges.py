@@ -65,7 +65,7 @@ with open(PORTAL_FILE, "r", encoding="utf-8") as f:
     portal_content = f.read()
 
 print(f"\n[+] Verifying Portal HTML ({PORTAL_FILE})...")
-portal_matches = re.findall(r'<h3 class="card-title">([^<]+)</h3>', portal_content)
+portal_matches = re.findall(r'<h3 class="card-title"[^>]*>([^<]+)</h3>', portal_content)
 print(f"    - Card titles found in portal.html: {len(portal_matches)}")
 
 # 4. Check Handout Files

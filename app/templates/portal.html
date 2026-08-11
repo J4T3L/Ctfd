@@ -29,6 +29,84 @@
         .category-section.active {
             display: grid;
         }
+        .btn-hint {
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid var(--accent-purple);
+            color: var(--accent-purple);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+        .btn-hint:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Hint Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(4, 7, 17, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #0a1128;
+            border: 1px solid var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 550px;
+            padding: 1.8rem;
+            color: #fff;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.8rem;
+        }
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .modal-close:hover {
+            color: var(--accent-pink);
+        }
+        .tool-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -67,94 +145,229 @@
         <section id="cat-web" class="category-section active grid-3">
             
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">DevNotes Login</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">DevNotes Login</h3>
                 <p class="card-desc">Bypass login SQL Injection (`admin' --`).</p>
-                <a href="/sqli/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('DevNotes Login', 'WEB', 'Burp Suite / sqlmap', 'Gunakan Burp Suite Interceptor atau isi form login dengan payload SQL Injection: admin\' -- pada kolom Username.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/sqli/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</div>
-                <h3 class="card-title">Hidden Comments</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Hidden Comments</h3>
                 <p class="card-desc">Inspeksi komentar HTML kode sumber.</p>
-                <a href="/hidden_comment/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Hidden Comments', 'WEB', 'Browser View Source / curl', 'Buka halaman web lalu tekan Ctrl+U (Inspect Source Code). Cari komentar HTML <!-- Secret Admin Endpoint: ... --> untuk menemukan rute rahasia.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/hidden_comment/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">Cookie Manager</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Cookie Manager</h3>
                 <p class="card-desc">Manipulasi cookie Base64 `user_session`.</p>
-                <a href="/cookie_lab/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Cookie Manager', 'WEB', 'DevTools (F12) / CyberChef', 'Buka DevTools F12 -> Application -> Cookies. Ambil cookie user_session (Base64), ubah role=guest menjadi role=admin (cm9sZT1hZG1pbg==).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/cookie_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</div>
-                <h3 class="card-title">Robots.txt Recon</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Robots.txt Recon</h3>
                 <p class="card-desc">Periksa direktori terlarang crawler.</p>
-                <a href="/robots_secret/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Robots.txt Recon', 'WEB', 'curl / Browser', 'Akses file https://target.paradick.my.id/robots_secret/robots.txt di browser. Cari path Disallow terlarang lalu buka rute tersebut.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/robots_secret/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">Reflected XSS</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Reflected XSS</h3>
                 <p class="card-desc">Suntikkan payload Reflected XSS.</p>
-                <a href="/xss_reflected/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Reflected XSS', 'WEB', 'Burp Suite / nuclei', 'Masukkan payload JavaScript <script>alert(1)</script> pada kolom pencarian untuk mengeksekusi reflected XSS script.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/xss_reflected/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</div>
-                <h3 class="card-title">UserProfile IDOR</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">UserProfile IDOR</h3>
                 <p class="card-desc">Ganti `user_id=100` untuk profil admin.</p>
-                <a href="/idor/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('UserProfile IDOR', 'WEB', 'ffuf / Burp Intruder', 'Buka URL https://target.paradick.my.id/idor/?user_id=102. Ganti nilai parameter URL user_id menjadi 100 untuk melihat akun Administrator.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/idor/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</div>
-                <h3 class="card-title">File Viewer LFI</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">File Viewer LFI</h3>
                 <p class="card-desc">Path traversal `?page=flag.txt`.</p>
-                <a href="/lfi/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('File Viewer LFI', 'WEB', 'ffuf / nuclei', 'Lakukan Local File Inclusion / Path Traversal dengan mengganti parameter URL ?page=welcome.txt menjadi ?page=flag.txt.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/lfi/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">Ping Diagnostic</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Ping Diagnostic</h3>
                 <p class="card-desc">Command Injection `; cat /flag.txt`.</p>
-                <a href="/rce_ping/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Ping Diagnostic', 'WEB', 'Burp Suite / Terminal', 'Form ping tidak melakukan sanitasi masukan. Inject perintah shell dengan pemisah titik koma: 127.0.0.1; cat /flag.txt.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/rce_ping/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 350 PTS</div>
-                <h3 class="card-title">Business Logic Shop</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Business Logic Shop</h3>
                 <p class="card-desc">Manipulasi kuantitas produk negatif.</p>
-                <a href="/logic_shop/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Business Logic Shop', 'WEB', 'Burp Suite Repeater', 'Saat membeli item flag ($1000), isi kolom kuantitas dengan bilangan negatif (misal -10). Total harga akan bernilai negatif dan mengkreditkan saldo akun Anda.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/logic_shop/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</div>
-                <h3 class="card-title">Exposed .git Leak</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Exposed .git Leak</h3>
                 <p class="card-desc">Public .git repository directory leak.</p>
-                <a href="/hidden_comment/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Exposed .git Leak', 'WEB', 'GitTools / git-dumper', 'Gunakan tool git-dumper untuk mengunduh folder .git terekspos, lalu periksa sejarah git log commit untuk menemukan file flag.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/hidden_comment/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</div>
-                <h3 class="card-title">URL Fetcher SSRF</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">URL Fetcher SSRF</h3>
                 <p class="card-desc">SSRF ke internal admin loopback.</p>
-                <a href="/ssrf/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('URL Fetcher SSRF', 'WEB', 'Burp Suite / nuclei', 'Lakukan Server-Side Request Forgery dengan memasukkan URL internal loopback server: http://127.0.0.1:8000/ssrf/internal/admin/secret.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/ssrf/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</div>
-                <h3 class="card-title">JWT Token Inspector</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">JWT Token Inspector</h3>
                 <p class="card-desc">JWT Weak Secret / Alg None.</p>
-                <a href="/jwt_lab/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('JWT Token Inspector', 'WEB', 'jwt_tool / CyberChef', 'Edit header JWT token menjadi {&quot;alg&quot;:&quot;none&quot;,&quot;typ&quot;:&quot;JWT&quot;} dan payload {&quot;user&quot;:&quot;admin&quot;,&quot;role&quot;:&quot;admin&quot;} lalu hapus bagian signature-nya.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/jwt_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</div>
-                <h3 class="card-title">XXE XML Parser</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">XXE XML Parser</h3>
                 <p class="card-desc">XML External Entity Injection.</p>
-                <a href="/xxe_lab/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('XXE XML Parser', 'WEB', 'Burp Suite / nuclei', 'Kirim payload XML XXE pada request: <!DOCTYPE test [ <!ENTITY xxe SYSTEM &quot;file:///flag.txt&quot;> ]><data>&xxe;</data>.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/xxe_lab/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</div>
-                <h3 class="card-title">Jinja2 SSTI Generator</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Jinja2 SSTI Generator</h3>
                 <p class="card-desc">SSTI WAF Keyword Bypass.</p>
-                <a href="/ssti/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Jinja2 SSTI Generator', 'WEB', 'tplmap / nuclei', 'Lakukan Server-Side Template Injection pada Jinja2 dengan payload bypass WAF: {{ self.__init__.__globals__.__builtins__.open(\'/flag.txt\').read() }}.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/ssti/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</div>
-                <h3 class="card-title">Pickle Cache RCE</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">WEB</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Pickle Cache RCE</h3>
                 <p class="card-desc">Python Pickle Deserialization RCE.</p>
-                <a href="/pickle_rce/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Pickle Cache RCE', 'WEB', 'Python 3 (pickle & base64)', 'Buat skrip Python untuk menserialisasi kelas dengan method __reduce__ RCE cat /flag.txt, lalu encode hasil pickle ke Base64 dan pasang di cookie pickle_session.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/pickle_rce/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
         </section>
 
@@ -162,64 +375,154 @@
         <section id="cat-crypto" class="category-section grid-3">
             
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</div>
-                <h3 class="card-title">Caesar Cipher ROT13</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Caesar Cipher ROT13</h3>
                 <p class="card-desc">Shift Cipher ROT13 decryption.</p>
-                <a href="/handout/16_caesar.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Caesar Cipher ROT13', 'CRYPTO', 'CyberChef / tr', 'Buka file 16_caesar.txt. Masukkan ciphertext ke CyberChef lalu gunakan operasi ROT13 (Shift 13) untuk membaca flag.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/16_caesar.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">Multi-Layer Encoding</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Multi-Layer Encoding</h3>
                 <p class="card-desc">Hex -> Base32 -> Base64 decoding.</p>
-                <a href="/handout/17_nested_encoding.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Multi-Layer Encoding', 'CRYPTO', 'CyberChef / Base32', 'Buka file 17_nested_encoding.txt. Gunakan CyberChef dengan urutan resep: From Hex -> From Base32 -> From Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/17_nested_encoding.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</div>
-                <h3 class="card-title">Legacy MD5 Hash Crack</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Legacy MD5 Hash Crack</h3>
                 <p class="card-desc">Cracking MD5 password hash.</p>
-                <a href="/weak_hash/" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Buka Challenge →</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Legacy MD5 Hash Crack', 'CRYPTO', 'hashcat / john / CrackStation', 'Salin hash MD5 e10adc3949ba59abbe56e057f20f883e. Gunakan hashcat -m 0 e10adc3949ba59abbe56e057f20f883e rockyou.txt untuk mendapatkan password.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/weak_hash/" class="btn-primary" style="width: 100%; justify-content: center;">Buka Challenge →</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">RSA Small Exponent e=3</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">RSA Small Exponent e=3</h3>
                 <p class="card-desc">RSA Low Exponent m = c^(1/3).</p>
-                <a href="/handout/19_rsa_e3.json" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('RSA Small Exponent e=3', 'CRYPTO', 'Python 3 / SymPy', 'Buka file 19_rsa_e3.json. Karena e=3 sangat kecil (c < n), hitung nilai m dengan menghitung akar pangkat tiga dari ciphertext: m = c**(1/3).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/19_rsa_e3.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 350 PTS</div>
-                <h3 class="card-title">RSA Prime Factorization</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">RSA Prime Factorization</h3>
                 <p class="card-desc">RSA Factorization (p * q).</p>
-                <a href="/handout/20_rsa_factor.json" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('RSA Prime Factorization', 'CRYPTO', 'factordb.com / SageMath', 'Buka file 20_rsa_factor.json. Masukkan nilai n=493 ke factordb.com untuk menemukan p=17 dan q=29, lalu dekripsi ciphertext c.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/20_rsa_factor.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</div>
-                <h3 class="card-title">Single-Byte XOR Stream</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Single-Byte XOR Stream</h3>
                 <p class="card-desc">XOR Stream Cipher Brute-Force.</p>
-                <a href="/handout/21_xor_stream.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Single-Byte XOR Stream', 'CRYPTO', 'CyberChef / xortool', 'Buka file 21_xor_stream.txt. Masukkan hex ciphertext ke CyberChef -> pilih operasi XOR Brute Force (kunci 1-byte 0x42).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/21_xor_stream.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">Vigenère Cipher</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Vigenère Cipher</h3>
                 <p class="card-desc">Frequency Analysis Key Discovery.</p>
-                <a href="/handout/22_vigenere.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Vigenère Cipher', 'CRYPTO', 'dcode.fr / Vigenere Solver', 'Buka file 22_vigenere.txt. Masukkan ciphertext MBD{...} ke dcode.fr Vigenere Solver dengan kunci KEY untuk dekripsi.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/22_vigenere.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</div>
-                <h3 class="card-title">AES-128 ECB Pattern</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">AES-128 ECB Pattern</h3>
                 <p class="card-desc">AES ECB Block Alignment Leak.</p>
-                <a href="/handout/23_aes_ecb.hex" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('AES-128 ECB Pattern', 'CRYPTO', 'Python 3 / CyberChef', 'Buka file 23_aes_ecb.hex. Analisis blok hex 16-byte identik pada ECB mode yang mengindikasikan struktur data plaintext.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/23_aes_ecb.hex" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</div>
-                <h3 class="card-title">Custom Hash Collision</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Custom Hash Collision</h3>
                 <p class="card-desc">Custom Hash Function Collision.</p>
-                <a href="/handout/24_custom_hash.py" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Custom Hash Collision', 'CRYPTO', 'Z3 Solver / Python 3', 'Buka file 24_custom_hash.py. Gunakan Z3 Theorem Prover untuk mencari string lain yang menghasilkan nilai hash 305419896.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/24_custom_hash.py" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</div>
-                <h3 class="card-title">Diffie-Hellman Weak Mod</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">CRYPTO</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Diffie-Hellman Weak Mod</h3>
                 <p class="card-desc">Diffie-Hellman Discrete Logarithm.</p>
-                <a href="/handout/25_dh_params.json" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Diffie-Hellman Weak Mod', 'CRYPTO', 'SageMath / Pari-GP', 'Buka file 25_dh_params.json. Hitung Discrete Logarithm Problem g^a = A (mod p) pada p=23 yang sangat kecil menggunakan SageMath.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/25_dh_params.json" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
         </section>
 
@@ -227,64 +530,154 @@
         <section id="cat-forensics" class="category-section grid-3">
             
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</div>
-                <h3 class="card-title">Image EXIF Metadata</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Image EXIF Metadata</h3>
                 <p class="card-desc">Exiftool metadata extraction.</p>
-                <a href="/handout/26_flag_image.exif.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Image EXIF Metadata', 'FORENSICS', 'exiftool / strings', 'Buka file 26_flag_image.exif.txt. Gunakan perintah terminal strings atau exiftool untuk menemukan tag User Comment.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/26_flag_image.exif.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</div>
-                <h3 class="card-title">PNG LSB Steganography</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">PNG LSB Steganography</h3>
                 <p class="card-desc">LSB bitplane extraction.</p>
-                <a href="/handout/27_lsb_stego.png.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('PNG LSB Steganography', 'FORENSICS', 'zsteg / Stegsolve', 'Buka file 27_lsb_stego.png.txt. Gunakan zsteg untuk mengunduh bitplane terendah (LSB) Plane 0 pada gambar PNG.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/27_lsb_stego.png.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</div>
-                <h3 class="card-title">Corrupted Header Fix</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Corrupted Header Fix</h3>
                 <p class="card-desc">Magic Bytes PNG/JPEG repair.</p>
-                <a href="/handout/28_corrupted_header.png.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Corrupted Header Fix', 'FORENSICS', 'Hex Editor / xxd', 'Buka file 28_corrupted_header.png.txt. Magic bytes rusak (00 00 00 00). Perbaiki 4 byte awal menjadi header PNG asli (89 50 4E 47).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/28_corrupted_header.png.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">Disk Partition Carving</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Disk Partition Carving</h3>
                 <p class="card-desc">Foremost file carving.</p>
-                <a href="/handout/29_disk_carve.raw.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Disk Partition Carving', 'FORENSICS', 'Autopsy / foremost', 'Buka file 29_disk_carve.raw.txt. Lakukan carving sektor memori mentah unallocated space untuk menemukan file terhapus.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/29_disk_carve.raw.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</div>
-                <h3 class="card-title">Volatility Memory Dump</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Volatility Memory Dump</h3>
                 <p class="card-desc">Volatility3 process dump.</p>
-                <a href="/handout/30_volatility_memory.dmp.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Volatility Memory Dump', 'FORENSICS', 'volatility3', 'Buka file 30_volatility_memory.dmp.txt. Periksa memori proses lsass.exe PID 1337 untuk mengekstrak string flag.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/30_volatility_memory.dmp.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</div>
-                <h3 class="card-title">Layered PDF Stream</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Layered PDF Stream</h3>
                 <p class="card-desc">PDF object stream analysis.</p>
-                <a href="/handout/31_hidden_stream.pdf.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Layered PDF Stream', 'FORENSICS', 'pdf-parser / pdfdetach', 'Buka file 31_hidden_stream.pdf.txt. Analisis struktur stream objek PDF 4 0 obj tersembunyi.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/31_hidden_stream.pdf.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</div>
-                <h3 class="card-title">Encrypted ZIP Crack</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Encrypted ZIP Crack</h3>
                 <p class="card-desc">ZIP2John password cracking.</p>
-                <a href="/handout/32_encrypted_secret.zip" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Encrypted ZIP Crack', 'FORENSICS', 'zip2john & john', 'Unduh file 32_encrypted_secret.zip. Ekstrak hash dengan zip2john 32_encrypted_secret.zip > hash.txt lalu crack dengan john --wordlist=rockyou.txt hash.txt.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/32_encrypted_secret.zip" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</div>
-                <h3 class="card-title">Audio Spectrogram</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Audio Spectrogram</h3>
                 <p class="card-desc">Audacity spectrogram visualizer.</p>
-                <a href="/handout/33_audio_spectrogram.wav.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Audio Spectrogram', 'FORENSICS', 'Audacity / Sonic Visualiser', 'Buka file 33_audio_spectrogram.wav.txt. Buka tampilan audio di Audacity lalu ubah mode Waveform menjadi Spectrogram untuk melihat pesan visual.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/33_audio_spectrogram.wav.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</div>
-                <h3 class="card-title">Browser SQLite History</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Browser SQLite History</h3>
                 <p class="card-desc">Browser history query.</p>
-                <a href="/handout/34_history.sqlite.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Browser SQLite History', 'FORENSICS', 'sqlite3 / DB Browser', 'Buka file 34_history.sqlite.txt. Jalankan query SQL: SELECT url FROM urls WHERE url LIKE \'%secret%\';.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/34_history.sqlite.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</div>
-                <h3 class="card-title">USB HID Keystroke</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">FORENSICS</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">USB HID Keystroke</h3>
                 <p class="card-desc">USB keyboard packet mapping.</p>
-                <a href="/handout/35_usb_hid_keystrokes.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('USB HID Keystroke', 'FORENSICS', 'tshark / Python 3', 'Buka file 35_usb_hid_keystrokes.pcap.txt. Petakan hex byte USB HID keycode (0x06=C, 0x17=T, 0x09=F, ...) menjadi tombol keyboard.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/35_usb_hid_keystrokes.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
         </section>
 
@@ -292,52 +685,124 @@
         <section id="cat-network" class="category-section grid-3">
             
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">HTTP Cleartext Packet</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">HTTP Cleartext Packet</h3>
                 <p class="card-desc">Wireshark PCAP POST inspection.</p>
-                <a href="/handout/36_http_login.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('HTTP Cleartext Packet', 'NETWORK', 'Wireshark / tshark', 'Buka file 36_http_login.pcap.txt. Filter Wireshark dengan http.request.method == &quot;POST&quot;, lalu klik kanan -> Follow TCP Stream.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/36_http_login.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">DNS Tunneling Exfil</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">DNS Tunneling Exfil</h3>
                 <p class="card-desc">Base64 DNS Query Decoding.</p>
-                <a href="/handout/37_dns_queries.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('DNS Tunneling Exfil', 'NETWORK', 'tshark / CyberChef', 'Buka file 37_dns_queries.pcap.txt. Ambil subdomain query DNS Q1RGe2Ruc183dW5u... lalu decode dari Base64.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/37_dns_queries.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</div>
-                <h3 class="card-title">Anonymous FTP Capture</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Anonymous FTP Capture</h3>
                 <p class="card-desc">FTP Passive Data Stream.</p>
-                <a href="/handout/38_ftp_passive.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Anonymous FTP Capture', 'NETWORK', 'Wireshark', 'Buka file 38_ftp_passive.pcap.txt. Filter Wireshark dengan ftp-data untuk melihat stream transfer file pasif FTP.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/38_ftp_passive.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</div>
-                <h3 class="card-title">ICMP Covert Channel</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">ICMP Covert Channel</h3>
                 <p class="card-desc">ICMP Echo Payload Extraction.</p>
-                <a href="/handout/39_icmp_ping.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('ICMP Covert Channel', 'NETWORK', 'tshark / CyberChef', 'Buka file 39_icmp_ping.pcap.txt. Ekstrak data payload hex pada paket ICMP Echo Request (43 54 46 7b...), lalu decode Hex ke ASCII.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/39_icmp_ping.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</div>
-                <h3 class="card-title">SSL/TLS Keylog Decrypt</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 400 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">SSL/TLS Keylog Decrypt</h3>
                 <p class="card-desc">Wireshark SSLKEYLOGFILE Import.</p>
-                <a href="/handout/40_tls_keylog.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('SSL/TLS Keylog Decrypt', 'NETWORK', 'Wireshark TLS Preferences', 'Buka file 40_tls_keylog.pcap.txt. Impor baris SSLKEYLOGFILE ke Wireshark (Preferences -> Protocols -> TLS -> (Pre)-Master-Secret log filename).')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/40_tls_keylog.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</div>
-                <h3 class="card-title">ARP Spoofing Analysis</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 250 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">ARP Spoofing Analysis</h3>
                 <p class="card-desc">ARP MITM Packet Inspection.</p>
-                <a href="/handout/41_arp_mitm.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('ARP Spoofing Analysis', 'NETWORK', 'Wireshark', 'Buka file 41_arp_mitm.pcap.txt. Cari paket ARP Reply bermerek Man-in-the-Middle untuk mendeteksi data yang disadap.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/41_arp_mitm.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</div>
-                <h3 class="card-title">Unencrypted Telnet</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 100 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Unencrypted Telnet</h3>
                 <p class="card-desc">Telnet TCP Stream Credentials.</p>
-                <a href="/handout/42_telnet_stream.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Unencrypted Telnet', 'NETWORK', 'Wireshark', 'Buka file 42_telnet_stream.pcap.txt. Filter telnet pada Wireshark lalu Follow TCP Stream pada port 23 untuk membaca password.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/42_telnet_stream.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">IoT MQTT Packet Sniff</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">NETWORK</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">IoT MQTT Packet Sniff</h3>
                 <p class="card-desc">MQTT Topic Subscription Leak.</p>
-                <a href="/handout/43_mqtt_broker.pcap.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('IoT MQTT Packet Sniff', 'NETWORK', 'Wireshark / mosquitto_sub', 'Buka file 43_mqtt_broker.pcap.txt. Filter Wireshark mqtt lalu periksa payload pada topic /sensors/vault/security.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/43_mqtt_broker.pcap.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
         </section>
 
@@ -345,49 +810,139 @@
         <section id="cat-reverse" class="category-section grid-3">
             
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</div>
-                <h3 class="card-title">ELF Compiled Strings</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">EASY • 50 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">ELF Compiled Strings</h3>
                 <p class="card-desc">Strings & Symbols extraction.</p>
-                <a href="/handout/44_elf_strings.bin" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('ELF Compiled Strings', 'REVERSE', 'strings / ghidra', 'Buka file 44_elf_strings.bin. Jalankan perintah terminal strings 44_elf_strings.bin | grep CTF untuk membaca string biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/44_elf_strings.bin" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</div>
-                <h3 class="card-title">Python Bytecode (.pyc)</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 150 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Python Bytecode (.pyc)</h3>
                 <p class="card-desc">Uncompyle6 decompilation.</p>
-                <a href="/handout/45_app.pyc.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Python Bytecode (.pyc)', 'REVERSE', 'uncompyle6 / decompyle++', 'Buka file 45_app.pyc.txt. Dekompilasi opcode Python 3.11 bytecode LOAD_CONST ke kode sumber Python murni.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/45_app.pyc.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</div>
-                <h3 class="card-title">Java Class Decompile</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 200 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Java Class Decompile</h3>
                 <p class="card-desc">JADX Java decompilation.</p>
-                <a href="/handout/46_Challenge.class.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Java Class Decompile', 'REVERSE', 'jadx-gui / cfr', 'Buka file 46_Challenge.class.txt. Buka bytecode .class Java menggunakan decompiler jadx-gui.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/46_Challenge.class.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</div>
-                <h3 class="card-title">C ELF Crackme Logic</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-cyan);">MEDIUM • 300 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">C ELF Crackme Logic</h3>
                 <p class="card-desc">Ghidra / GDB strcmp analysis.</p>
-                <a href="/handout/47_crackme.c" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('C ELF Crackme Logic', 'REVERSE', 'Ghidra / GDB', 'Buka file 47_crackme.c. Periksa logika pemanggilan fungsi strcmp(key, &quot;SUP3R_S3CR37_K3Y_2026&quot;) pada kode sumber C.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/47_crackme.c" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</div>
-                <h3 class="card-title">Android APK Smali</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 350 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">Android APK Smali</h3>
                 <p class="card-desc">Smali code logic analysis.</p>
-                <a href="/handout/48_app_smali.txt" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('Android APK Smali', 'REVERSE', 'jadx-gui / apktool', 'Buka file 48_app_smali.txt. Periksa disassembly kode Smali const-string v0 pada kelas MainActivity.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/48_app_smali.txt" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</div>
-                <h3 class="card-title">x86 BOF ret2win</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 450 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">x86 BOF ret2win</h3>
                 <p class="card-desc">Stack overwrite return address.</p>
-                <a href="/handout/49_bof_ret2win.c" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('x86 BOF ret2win', 'REVERSE', 'pwntools / gdb-pwndbg', 'Buka file 49_bof_ret2win.c. Kerentanan gets(buffer) memungkinkan Buffer Overflow untuk meng-overwrite return address EIP ke alamat win().')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/49_bof_ret2win.c" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
             <div class="glass-card">
-                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</div>
-                <h3 class="card-title">UPX Packed Unpacking</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">HARD • 500 PTS</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; background: rgba(255,255,255,0.08); padding: 0.15rem 0.4rem; borderRadius: 4px; color: var(--text-muted);">REVERSE</span>
+                </div>
+                <h3 class="card-title" style="margin-top: 0.4rem;">UPX Packed Unpacking</h3>
                 <p class="card-desc">UPX unpack & anti-debug.</p>
-                <a href="/handout/50_upx_packed.bin" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">Unduh Handout 📥</a>
+
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button onclick="openHintModal('UPX Packed Unpacking', 'REVERSE', 'upx -d / x64dbg', 'Buka file 50_upx_packed.bin. Dekompresi biner UPX dengan perintah upx -d 50_upx_packed.bin sebelum melakukan analisis biner.')" class="btn-hint" style="width: 100%; justify-content: center;">
+                        💡 Hint & Recommended Tools
+                    </button>
+                    <a href="/handout/50_upx_packed.bin" class="btn-primary" style="width: 100%; justify-content: center;">Unduh Handout 📥</a>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- HINT POPUP MODAL -->
+    <div id="hintModal" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <span id="modalCategory" style="font-size: 0.72rem; font-weight: 700; color: var(--accent-purple); letter-spacing: 0.5px;">CATEGORY</span>
+                    <h3 id="modalTitle" style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">Challenge Title</h3>
+                </div>
+                <button class="modal-close" onclick="closeHintModal()">&times;</button>
+            </div>
+            
+            <div>
+                <div style="font-size: 0.8rem; color: var(--text-sub); margin-bottom: 0.3rem;">🛠️ Recommended Tools:</div>
+                <div id="modalTool" class="tool-badge">Tool Name</div>
+
+                <div style="font-size: 0.8rem; color: var(--text-sub); margin-bottom: 0.3rem;">💡 Hint & Petunjuk Pengerjaan:</div>
+                <p id="modalHint" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    Hint text details...
+                </p>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                <button class="btn-primary" onclick="closeHintModal()">Mengerti, Tutup Hint 👍</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         function switchCategory(catId) {
@@ -396,6 +951,24 @@
             
             event.target.classList.add('active');
             document.getElementById('cat-' + catId).classList.add('active');
+        }
+
+        function openHintModal(title, category, tool, hint) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCategory').innerText = category + ' • HINT GUIDE';
+            document.getElementById('modalTool').innerText = tool;
+            document.getElementById('modalHint').innerText = hint;
+            document.getElementById('hintModal').classList.add('active');
+        }
+
+        function closeHintModal() {
+            document.getElementById('hintModal').classList.remove('active');
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target.id === 'hintModal') {
+                closeHintModal();
+            }
         }
     </script>
 </body>
