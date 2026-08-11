@@ -142,18 +142,18 @@
 
 [18] Legacy MD5 Password Hash (Medium - 200 Pts)
 - Target: https://target.paradick.my.id/weak_hash/
-- Solusi: Crack hash MD5 `e10adc3949ba59abbe56e057f20f883e` dengan hashcat / crackstation -> `password123`.
-- Flag: CTF{md5_w34k_h4sh_cr4ck3d_2026}
+- Solusi: Crack hash MD5 `e10adc3949ba59abbe56e057f20f883e` dengan hashcat / crackstation -> `password123`. Format flag: CTF{password123}.
+- Flag: CTF{password123}
 
 [19] RSA Small Exponent Attack (Medium - 300 Pts)
 - Handout khusus: https://target.paradick.my.id/handout/19_rsa_e3.json
-- Solusi: Hitung akar pangkat 3 dari c ($m = 4913^{1/3} = 17$).
-- Flag: CTF{rs4_sm4ll_3xp0n3n7_2026}
+- Solusi: Hitung akar pangkat 3 dari c ($m = 4913^{1/3} = 17$). Format flag: CTF{17}.
+- Flag: CTF{17}
 
 [20] RSA Prime Factorization Attack (Medium - 350 Pts)
 - Handout khusus: https://target.paradick.my.id/handout/20_rsa_factor.json
-- Solusi: Faktorkan n=493 menjadi p=17, q=29 via factordb.com lalu dekripsi c.
-- Flag: CTF{rs4_f4c70r1z4710n_f4ct0rdb_2026}
+- Solusi: Faktorkan n=493 menjadi p=17, q=29 via factordb.com, phi=448, d=257, m=pow(312, 257, 493) -> m=448. Format flag: CTF{448}.
+- Flag: CTF{448}
 
 [21] Single-Byte XOR Stream Cipher (Medium - 250 Pts)
 - Handout khusus: https://target.paradick.my.id/handout/21_xor_stream.txt
@@ -177,8 +177,8 @@
 
 [25] Diffie-Hellman Weak Modulus Attack (Hard - 500 Pts)
 - Handout khusus: https://target.paradick.my.id/handout/25_dh_params.json
-- Solusi: Hitung Discrete Logarithm $5^a \equiv 8 \pmod{23}$ pada SageMath (`discrete_log(8, 5, 23)`).
-- Flag: CTF{d1ff13_h3llm4n_w34k_p_2026}
+- Solusi: Hitung Discrete Logarithm $5^a \equiv 8 \pmod{23}$ pada SageMath (`discrete_log(8, 5, 23)`). Hasil s=12. Format flag: CTF{12}.
+- Flag: CTF{12}
 
 
 --------------------------------------------------------------------------------

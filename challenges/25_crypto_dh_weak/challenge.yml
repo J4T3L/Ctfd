@@ -12,7 +12,7 @@ type: standard
 state: visible
 
 flags:
-  - "CTF{d1ff13_h3llm4n_w34k_p_2026}"
+  - "CTF{12}"
 
 tags:
   - cryptography

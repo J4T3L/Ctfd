@@ -12,7 +12,7 @@ type: standard
 state: visible
 
 flags:
-  - "CTF{md5_w34k_h4sh_cr4ck3d_2026}"
+  - "CTF{password123}"
 
 tags:
   - cryptography
