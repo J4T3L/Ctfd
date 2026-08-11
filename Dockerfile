@@ -1,8 +1,13 @@
+# Stage 1: Build React Production Frontend
+FROM node:20-slim AS frontend-builder
+WORKDIR /frontend
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend/ ./
+RUN npm run build
+
+# Stage 2: Python Flask Production Container
 FROM python:3.11-slim
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
 WORKDIR /app
 
 RUN useradd -m -u 1000 ctf
@@ -11,6 +16,7 @@ COPY app/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
+COPY --from=frontend-builder /frontend/dist /frontend/dist
 
 COPY flag.txt /flag.txt
 COPY flag.txt /app/flag.txt
@@ -22,4 +28,4 @@ USER ctf
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "2", "app:app"]
+CMD ["python", "app.py"]
