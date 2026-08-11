@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import ToolsPage from './pages/ToolsPage';
 import SqliPage from './pages/SqliPage';
 import SstiPage from './pages/SstiPage';
 import IdorPage from './pages/IdorPage';
@@ -31,6 +32,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/app/tools" element={<ToolsPage />} />
             <Route path="/app/sqli" element={<SqliPage />} />
             <Route path="/app/comment" element={<CommentPage />} />
             <Route path="/app/ssti" element={<SstiPage />} />

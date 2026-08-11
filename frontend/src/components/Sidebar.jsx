@@ -2,13 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   Shield, LayoutDashboard, KeyRound, FileText, UserCheck, 
-  FolderOpen, Terminal, Globe, Search, Ticket, ShoppingCart, Cpu, Bot, Hash, Code
+  FolderOpen, Terminal, Globe, Search, Ticket, ShoppingCart, Cpu, Bot, Hash, Code, Wrench
 } from 'lucide-react';
 
 export default function Sidebar() {
   const modules = [
     { label: 'SaaS Platform Home', path: '/', icon: Shield },
     { label: 'SOC Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { label: 'Tools & Arsenal Guide', path: '/app/tools', icon: Wrench, badge: 'Guide' },
     
     // Easy Modules (5)
     { label: 'Staff Login Portal', path: '/app/sqli', icon: KeyRound, category: 'EASY', vuln: 'SQLi' },
@@ -55,8 +56,14 @@ export default function Sidebar() {
           <span>SOC Dashboard</span>
         </NavLink>
 
+        <div className="nav-section-label">Modul Ajar Tools</div>
+        <NavLink to="/app/tools" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+          <Wrench size={18} color="var(--accent-purple)" />
+          <span style={{ color: 'var(--accent-purple)', fontWeight: '700' }}>Tools & Arsenal Guide</span>
+        </NavLink>
+
         <div className="nav-section-label">Enterprise Modules (15 Labs)</div>
-        {modules.slice(2).map((mod) => {
+        {modules.slice(3).map((mod) => {
           const Icon = mod.icon;
           return (
             <NavLink key={mod.path} to={mod.path} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
