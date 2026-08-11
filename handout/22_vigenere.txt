@@ -1,3 +1,1 @@
-Ciphertext: MBD{v1g3n3r3_c1ph3r_4n4lys1s_2026}
-Key: KEY
-Format: Vigenere Cipher
+MXD{f1k3l3b3_g1nr3v_4l4vcq1c_2026}

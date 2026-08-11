@@ -1,6 +1,13 @@
-PDF Object 4 0 obj
-<< /Length 42 /Filter /FlateDecode >>
+%PDF-1.7
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /Contents 4 0 R >> endobj
+4 0 obj
+<< /Length 38 >>
 stream
 CTF{pdf_h1dd3n_s7r34m_2026}
 endstream
 endobj
+xref
+trailer << /Root 1 0 R >>
+%%EOF

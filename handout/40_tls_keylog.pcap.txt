@@ -1,2 +1,8 @@
-SSLKEYLOGFILE:
-CLIENT_RANDOM 4a2b3c... -> Decrypted HTTPS GET /flag -> CTF{7ls_d3cryp710n_k3yl0gf1l3_2026}
+# SSLKEYLOGFILE - Import into Wireshark TLS Preferences to decrypt HTTPS session
+CLIENT_RANDOM 4a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b
+
+Decrypted Packet Stream (Frame 42):
+GET /vault/flag HTTP/1.1
+Host: target.paradick.my.id
+HTTP/1.1 200 OK
+Flag: CTF{7ls_d3cryp710n_k3yl0gf1l3_2026}

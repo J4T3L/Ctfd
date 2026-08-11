@@ -1,2 +1,3 @@
-WAV Audio Data Stream
-Spectrogram Visual Frequencies: CTF{4ud10_sp3c7r0gr4m_s73g0_2026}
+[Audio Spectrogram Signal Frequencies / Morse Code]
+-.-. - ..-. ---LEFT_BRACE--- ....- ..- -.. .---- ----- _ ... his3 -.-. --. .-. ....- -- _ ... --... ...-- --. ----- _ ..--- ----- ..--- -.... ---RIGHT_BRACE---
+Text Encoding: CTF{4ud10_sp3c7r0gr4m_s73g0_2026}

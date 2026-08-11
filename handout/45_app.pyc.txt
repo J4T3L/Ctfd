@@ -1,3 +1,6 @@
-Python 3.11 Bytecode Dump:
+Python 3.11 Bytecode Disassembly:
   1           0 LOAD_CONST               1 ('CTF{py7h0n_by73c0d3_d3c0mp1l3d_2026}')
               2 STORE_NAME               0 (flag)
+              4 LOAD_NAME                0 (flag)
+              6 PRINT_EXPR
+              8 RETURN_VALUE

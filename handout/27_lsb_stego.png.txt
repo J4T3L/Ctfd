@@ -1,2 +1,5 @@
-PNG Image Bitplane Data:
-LSB Plane 0 extracted text: CTF{lsb_st3g4n0gr4phy_3x7r4c73d_2026}
+[Stegsolve LSB Bitplane 0 Extract]
+00000000  50 4e 47 0d 0a 1a 0a 00  00 00 0d 49 48 44 52 00  |PNG........IHDR.|
+00000010  43 54 46 7b 6c 73 62 5f  73 74 33 67 34 6e 30 67  |CTF{lsb_st3g4n0g|
+00000020  72 34 70 68 79 5f 33 78  37 72 34 63 37 33 64 5f  |r4phy_3x7r4c73d_|
+00000030  32 30 32 36 7d 00 00 00  00 49 45 4e 44 ae 42 60  |2026}....IEND.B`|

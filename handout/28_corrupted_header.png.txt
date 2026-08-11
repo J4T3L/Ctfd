@@ -1,3 +1,5 @@
-Hex Dump:
-00000000: XX XX XX XX 0D 0A 1A 0A 00 00 00 0D 49 48 44 52  ........IHDR
-Corrupted Magic Bytes! Replace XX XX XX XX with 89 50 4E 47 to reveal flag: CTF{f1l3_h34d3r_m4g1c_by73s_f1x_2026}
+00000000: 00 00 00 00 0d 0a 1a 0a 00 00 00 0d 49 48 44 52  ............IHDR
+00000010: 43 54 46 7b 66 31 6c 33 5f 68 33 34 64 33 72 5f  CTF{f1l3_h34d3r_
+00000020: 6d 34 67 31 63 5f 62 79 37 33 73 5f 66 31 78 5f  m4g1c_by73s_f1x_
+00000030: 32 30 32 36 7d 00 00 00 00 49 45 4e 44 ae 42 60  2026}....IEND.B`
+[Note: Header corrupted! Restore PNG Magic Bytes 89 50 4E 47 to fix.]

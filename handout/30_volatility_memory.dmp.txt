@@ -1,2 +1,7 @@
-Volatility 3 Memory Process Dump (PID 1337):
-lsass.exe memory map dump -> Flag: CTF{v0l471l17y_m3m0ry_f0r3ns1cs_2026}
+Volatility 3 Framework 2.5.0
+PID      PPID     ImageFileName      Offset(V)
+4        0        System             0xfa8002068040
+1337     4        lsass.exe          0xfa800319a080
+
+Dumped process 1337 memory map:
+0xfa800319a100: 43 54 46 7b 76 30 6c 34 37 31 6c 31 37 79 5f 6d 33 6d 30 72 79 5f 66 30 72 33 6e 73 31 63 73 5f 32 30 32 36 7d

@@ -1,2 +1,11 @@
-FTP Passive Data Transfer Stream (Port 2021):
-STOR secret_flag.txt -> CTF{f7p_p4ss1v3_d474_7r4nsf3r_2026}
+220 (vsFTPd 3.0.3)
+USER anonymous
+331 Please specify the password.
+PASS guest@ctf.org
+230 Login successful.
+PASV
+227 Entering Passive Mode (192,168,1,100,78,245).
+RETR confidential.txt
+150 Opening BINARY mode data connection for confidential.txt (36 bytes).
+CTF{f7p_p4ss1v3_d474_7r4nsf3r_2026}
+226 Transfer complete.

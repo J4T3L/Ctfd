@@ -1,3 +1,1 @@
-AES-128-ECB Encrypted Blocks:
 a1b2c3d4e5f60718a1b2c3d4e5f607184354467b3433735f3363625f7034373733726e5f6c33346b5f32303236
-Note: Identical 16-byte blocks yield identical ciphertext.

@@ -1,2 +1,4 @@
-MQTT IoT Broker Packet:
-Publish Message [Topic: /sensors/vault] -> Payload: CTF{mq77_107_br0k3r_sn1ff3d_2026}
+MQTT Control Packet: PUBLISH (30)
+Topic: /sensors/vault/security
+QoS: 0, Retain: false
+Payload: CTF{mq77_107_br0k3r_sn1ff3d_2026}

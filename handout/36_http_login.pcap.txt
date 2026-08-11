@@ -1,3 +1,7 @@
-Wireshark PCAP Stream:
-POST /login HTTP/1.1
-Data: user=admin&pass=12345&flag=CTF{c134r73x7_p4ck37_sn1ff3d_2026}
+POST /api/v1/auth HTTP/1.1
+Host: target.paradick.my.id
+User-Agent: Mozilla/5.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 72
+
+username=admin&password=SuperSecretPassword2026!&flag=CTF{c134r73x7_p4ck37_sn1ff3d_2026}

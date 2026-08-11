@@ -7,7 +7,8 @@ void win() {
 
 void vuln() {
     char buffer[64];
-    gets(buffer); // Buffer Overflow!
+    printf("Enter input: ");
+    gets(buffer); // Vulnerable to Stack Buffer Overflow!
 }
 
 int main() {

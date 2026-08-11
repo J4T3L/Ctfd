@@ -1,6 +1,5 @@
 {
   "n": 493,
   "e": 65537,
-  "c": 312,
-  "note": "Factor n into p and q using factordb."
+  "c": 312
 }

@@ -1,3 +1,3 @@
-[Disk Dump Sector 0x4000]
-Unallocated space carving result:
-FOUND DELETED FILE: flag.txt -> CTF{d1sk_c4rv1ng_f0r3ns1cs_2026}
+[RAW DISK IMAGE SECTOR 0x00004000]
+5a5a5a5a5a5a5a5a 4354467b6431736b 5f63347276316e67 663072336e733163
+735f323032367d5a 5a5a5a5a5a5a5a5a 5a5a5a5a5a5a5a5a 5a5a5a5a5a5a5a5a

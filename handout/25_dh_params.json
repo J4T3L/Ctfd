@@ -2,6 +2,5 @@
   "p": 23,
   "g": 5,
   "A": 8,
-  "B": 19,
-  "note": "Compute shared key s = B^a mod p = A^b mod p"
+  "B": 19
 }

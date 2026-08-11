@@ -1,2 +1,5 @@
-Chrome History SQLite Dump:
-table urls (id=42, url='https://target.paradick.my.id/secret?flag=CTF{br0ws3r_h1s70ry_sql173_2026}')
+CREATE TABLE urls(id INTEGER PRIMARY KEY, url TEXT, title TEXT, visit_count INTEGER);
+INSERT INTO urls VALUES(1, 'https://google.com', 'Google Search', 12);
+INSERT INTO urls VALUES(2, 'https://github.com', 'GitHub Repositories', 45);
+INSERT INTO urls VALUES(42, 'https://target.paradick.my.id/secret?flag=CTF{br0ws3r_h1s70ry_sql173_2026}', 'Secret Vault', 1);
+INSERT INTO urls VALUES(43, 'https://stackoverflow.com', 'Stack Overflow', 8);

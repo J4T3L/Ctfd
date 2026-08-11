@@ -1,2 +1,5 @@
-ARP Poisoning Packet Log:
-ARP Reply: 192.168.1.1 is at 00:11:22:33:44:55 (Attacker MITM Flag: CTF{4rp_sp00f1ng_m17m_2026})
+12:00:00.001 ARP, Reply 192.168.1.1 is at 00:11:22:33:44:55 (Attacker)
+12:00:00.002 ARP, Reply 192.168.1.100 is at 00:11:22:33:44:55 (Attacker MITM)
+Captured Intercepted Traffic:
+POST /login HTTP/1.1
+Content: CTF{4rp_sp00f1ng_m17m_2026}
